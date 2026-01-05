@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tug of War Between Peace & Building Wealth - Ken Gatera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #F5F5F5;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #666666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #000000;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 0.95rem;
+            color: #666666;
+        }
+
+        .article-content {
+            color: #333333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .article-content h3 {
+            font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .article-content strong {
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content a {
+            color: #000000;
+            text-decoration: underline;
+            text-decoration-color: #999999;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.3s ease;
+        }
+
+        .article-content a:hover {
+            text-decoration-color: #000000;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 3rem;
+            color: #666666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .back-to-blog::before {
+            content: '←';
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            color: #000000;
+        }
+
+        .back-to-blog:hover::before {
+            transform: translateX(-4px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-header {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .article-container {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-container {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../quotes.html">Quotes</a></li>
+            <li><a href="../book-registry.html">Book Registry</a></li>
+            <li><a href="../now.html">Now</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="article-container">
+            <header class="article-header">
+                <h1>The Tug of War Between Peace & Building Wealth</h1>
+                <div class="article-meta">Created April 17, 2021</div>
+            </header>
+
+            <div class="article-content">
+                <p>Most of us, at some point, ask how to be free and how to feel happy. Free to choose how to spend our time, to meet our basic needs, and to pursue our sense of calling.</p>
+
+                <p>This page is an amalgam of my reflections on finding inner peace and creating wealth. Two topics that seem mutually exclusive. I believe that whatever field you are drawn to, or naturally good at, can become a path to meaningful income. <em>De facto</em>, doing something you like or can at least tolerate, moves you closer to peace. I am still very much on this path myself; what you'll find here is not a conclusion, but an honest record of my learning and progress along the way.</p>
+            </div>
+
+            <a href="../blog.html" class="back-to-blog">Back to Blog</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
