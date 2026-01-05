@@ -73,183 +73,77 @@
         /* Main Content */
         main {
             margin-top: 80px;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 2rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Hero Section */
-        #hero {
-            text-align: center;
             padding: 3rem 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        #hero h1 {
+        .home-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .home-header h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             margin-bottom: 1rem;
             color: #000000;
         }
 
-        #hero .intro {
+        .home-header .subtitle {
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             color: #333333;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
+            margin-bottom: 3rem;
         }
 
-        /* Start Here Section */
-        #start-here {
-            background-color: #ffffff;
-            border-radius: 12px;
-            margin: 1rem auto;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        #start-here h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 2rem;
-            color: #000000;
-        }
-
-        #start-here .content {
+        .home-content {
             color: #333333;
             font-size: 1.1rem;
             line-height: 1.8;
-        }
-
-        #start-here .content p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Contact Section */
-        #contact {
-            padding: 3rem 2rem;
-        }
-
-        #contact h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 3rem;
-            color: #000000;
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
             text-align: left;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .home-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .home-content a {
             color: #000000;
-            font-weight: 500;
-            font-size: 0.95rem;
+            text-decoration: underline;
+            text-decoration-color: #999999;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.3s ease;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem;
-            border: 1px solid #d0d0d0;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-            color: #000000;
-            background-color: #F5F5F5;
-            transition: all 0.3s ease;
+        .home-content a:hover {
+            text-decoration-color: #000000;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #000000;
-            background-color: #ffffff;
-        }
-
-        .form-group input:invalid:not(:placeholder-shown),
-        .form-group textarea:invalid:not(:placeholder-shown) {
-            border-color: #d32f2f;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .error-message {
-            color: #d32f2f;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-            display: none;
-        }
-
-        .form-group input:invalid:not(:placeholder-shown) + .error-message,
-        .form-group textarea:invalid:not(:placeholder-shown) + .error-message {
-            display: block;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem 2rem;
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .submit-btn:hover {
-            background-color: #333333;
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .submit-btn:disabled {
-            background-color: #999999;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .success-message {
-            display: none;
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin-top: 1.5rem;
+        .contact-link {
+            margin-top: 4rem;
             text-align: center;
-            font-weight: 500;
         }
 
-        .success-message.show {
-            display: block;
-            animation: fadeIn 0.3s ease-out;
+        .contact-link a {
+            color: #000000;
+            text-decoration: underline;
+            text-decoration-color: #999999;
+            text-underline-offset: 3px;
+            font-size: 1.1rem;
+            transition: text-decoration-color 0.3s ease;
+        }
+
+        .contact-link a:hover {
+            text-decoration-color: #000000;
+        }
+
+        nav a.active {
+            color: #000000;
+        }
+
+        nav a.active::after {
+            width: 100%;
         }
 
         /* Footer */
@@ -259,6 +153,7 @@
             color: #666666;
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
+            margin-top: 4rem;
         }
 
         /* Mobile Responsive */
@@ -272,20 +167,12 @@
                 font-size: 0.9rem;
             }
 
-            section {
-                padding: 1.5rem 1.5rem;
-            }
-
-            #hero {
+            main {
                 padding: 2rem 1.5rem;
             }
 
-            #start-here {
-                padding: 1.5rem 1.5rem;
-            }
-
-            .contact-form {
-                padding: 2rem 1.5rem;
+            .home-header {
+                margin-bottom: 2rem;
             }
         }
 
@@ -296,12 +183,8 @@
                 gap: 0.5rem;
             }
 
-            #start-here {
-                padding: 1rem 1.25rem;
-            }
-
-            .contact-form {
-                padding: 2rem 1.25rem;
+            main {
+                padding: 1.5rem 1.25rem;
             }
         }
 
@@ -317,7 +200,8 @@
             }
         }
 
-        section {
+        .home-header,
+        .home-content {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
@@ -325,213 +209,32 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#start-here">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="quotes.html">Quotes</a></li>
+            <li><a href="book-registry.html">Book Registry</a></li>
+            <li><a href="now.html">Now</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="hero">
+        <div class="home-header">
             <h1>Ken Gatera</h1>
-            <p class="intro">
-                Welcome to my corner of the internet! 
-                <p> A place born from a desire to record my thoughts in a meaningful way, share various projects, and connect with fellow explorers and curious minds along the way.</p>
-            </p>
-        </section>
+            <p class="subtitle">Welcome to my corner of the internet!</p>
+        </div>
+        <div class="home-content">
+            <p>A place born from a desire to record my thoughts in a meaningful way, share various projects, and connect with fellow explorers and curious minds along the way.</p>
+            <p>If you're new here, I would describe myself as a driven INFJ, lover of minimalist aesthetics and an aspiring Vibe Architect (more on this very soon).</p>
+            <p>This space explores a wide range of ideas, projects, and curiosities. Feel free to look around, and if something resonates: let's start a conversation <a href="contact.html">via the contact section</a>.</p>
+        </div>
 
-        <section id="start-here">
-            <h2>Ken, in 30 seconds</h2>
-            <div class="content">
-                <p>
-                    If you're new here, I would describe myself as a driven INFJ, lover of minimalist aesthetics and an aspiring Vibe Architect (more on this very soon).
-                </p>
-                <p>
-                    This space explores a wide range of ideas, projects, and curiosities. Feel free to look around, and if something resonates: let’s start a conversation via the contact section below.
-                </p>
-                <p>
-                    Useful links (under construction) : Quotes, Articles, Book Registry, Now, Projects. 
-                </p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpqwrpvn" method="POST">
-                <div class="form-group">
-                    <label for="name">Name <span style="color: #d32f2f;">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
-                    <span class="error-message">Please enter your name</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email <span style="color: #d32f2f;">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                    <span class="error-message">Please enter a valid email address</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message <span style="color: #d32f2f;">*</span></label>
-                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-                    <span class="error-message">Please enter a message</span>
-                </div>
-                
-                <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
-                <div class="success-message" id="successMessage">
-                    Thank you! Your message has been sent successfully.
-                </div>
-            </form>
-        </section>
+        <div class="contact-link">
+            <p><a href="contact.html">Get In Touch</a></p>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const navHeight = document.querySelector('nav').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Add active state to navigation on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(section);
-        });
-
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const successMessage = document.getElementById('successMessage');
-
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Validate form
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !email || !message) {
-                return;
-            }
-
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                return;
-            }
-
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-
-            try {
-                const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    successMessage.classList.add('show');
-                    contactForm.reset();
-                    
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.classList.remove('show');
-                    }, 5000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                alert('Sorry, there was an error sending your message. Please try again later.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            }
-        });
-
-        // Real-time validation
-        const inputs = contactForm.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && !this.value.trim()) {
-                    this.setCustomValidity('This field is required');
-                } else if (this.type === 'email' && this.value) {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(this.value)) {
-                        this.setCustomValidity('Please enter a valid email address');
-                    } else {
-                        this.setCustomValidity('');
-                    }
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
-
-            input.addEventListener('input', function() {
-                if (this.validity.valid) {
-                    this.setCustomValidity('');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
