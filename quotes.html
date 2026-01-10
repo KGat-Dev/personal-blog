@@ -38,9 +38,18 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        nav li:nth-child(2) {
+            margin-left: auto;
         }
 
         nav a {
@@ -49,6 +58,11 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        nav li:first-child a {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         nav a:hover {
@@ -88,7 +102,7 @@
         }
 
         .quotes-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
         }
 
@@ -100,41 +114,25 @@
         }
 
         .quotes-header p {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: #333333;
         }
 
         .quotes-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            padding: 0;
+            text-align: left;
         }
 
-        .quote-item {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .quotes-list ul {
+            list-style-type: none;
+            padding-left: 0;
         }
 
-        .quote-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .quote-item blockquote {
+        .quotes-list li {
             font-size: 1.1rem;
             color: #333333;
             line-height: 1.8;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .quote-item .quote-author {
-            font-size: 0.9rem;
-            color: #666666;
-            text-align: right;
+            margin-bottom: 1.5rem;
         }
 
         /* Footer */
@@ -145,6 +143,16 @@
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
             margin-top: 4rem;
+        }
+
+        .contact-link a {
+            color: #000000;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .contact-link a:hover {
+            text-decoration: underline;
         }
 
         /* Mobile Responsive */
@@ -166,25 +174,27 @@
                 margin-bottom: 2rem;
             }
 
-            .quote-item {
-                padding: 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
             nav ul {
-                flex-direction: column;
-                align-items: center;
                 gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 0.25rem 0.5rem;
             }
 
             main {
                 padding: 1.5rem 1.25rem;
+                margin-top: 60px;
             }
 
-            .quote-item {
-                padding: 1.25rem;
-            }
         }
 
         /* Smooth fade-in animation */
@@ -199,7 +209,7 @@
             }
         }
 
-        .quote-item {
+        .quotes-list {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
@@ -207,32 +217,31 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html"><strong>Ken</strong></a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="now.html">Now</a></li>
             <li><a href="quotes.html" class="active">Quotes</a></li>
             <li><a href="book-registry.html">Book Registry</a></li>
-            <li><a href="now.html">Now</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="quotes-header">
-            <h1>Quotes</h1>
-            <p>Favourite aphorisms and principles</p>
+            <p>Fragments of clarity — A collection of aphorisms and principles</p>
         </div>
 
         <div class="quotes-list">
-            <div class="quote-item">
-                <blockquote>
-                    "Insert something by A. Rand here..."
-                </blockquote>
-                <div class="quote-author">— TBD</div>
-            </div>
+            <ul>
+                <li>"Insert something by A. Rand here..." — TBD</li>
+            </ul>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
+        <div class="contact-link">
+            <p><a href="contact.html">Get In Touch</a></p>
+       </div>
+       <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
     </footer>
 </body>
 </html>

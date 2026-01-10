@@ -38,9 +38,18 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        nav li:nth-child(2) {
+            margin-left: auto;
         }
 
         nav a {
@@ -49,6 +58,11 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        nav li:first-child a {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         nav a:hover {
@@ -88,7 +102,7 @@
         }
 
         .blog-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
         }
 
@@ -100,71 +114,44 @@
         }
 
         .blog-header p {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: #333333;
         }
 
         .articles-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            padding: 0;
+            text-align: left;
         }
 
-        .article-preview {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .articles-list ul {
+            list-style-type: none;
+            padding-left: 0;
         }
 
-        .article-preview:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .article-preview h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: #000000;
-        }
-
-        .article-preview .article-meta {
-            font-size: 0.9rem;
-            color: #666666;
-            margin-bottom: 1rem;
-        }
-
-        .article-preview .article-excerpt {
-            font-size: 1rem;
+        .articles-list li {
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
             color: #333333;
-            line-height: 1.8;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
         }
 
-        .article-preview .read-more {
-            display: inline-block;
+        .articles-list a {
             color: #000000;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
         }
 
-        .article-preview .read-more::after {
-            content: ' →';
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-
-        .article-preview .read-more:hover {
+        .articles-list a:hover {
             color: #333333;
+            text-decoration: underline;
         }
 
-        .article-preview .read-more:hover::after {
-            transform: translateX(4px);
+        .articles-list .article-meta {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-right: 0.5rem;
         }
 
         /* Footer */
@@ -175,6 +162,16 @@
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
             margin-top: 4rem;
+        }
+
+        .contact-link a {
+            color: #000000;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .contact-link a:hover {
+            text-decoration: underline;
         }
 
         /* Mobile Responsive */
@@ -196,25 +193,27 @@
                 margin-bottom: 2rem;
             }
 
-            .article-preview {
-                padding: 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
             nav ul {
-                flex-direction: column;
-                align-items: center;
                 gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 0.25rem 0.5rem;
             }
 
             main {
                 padding: 1.5rem 1.25rem;
+                margin-top: 60px;
             }
 
-            .article-preview {
-                padding: 1.25rem;
-            }
         }
 
         /* Smooth fade-in animation */
@@ -229,7 +228,7 @@
             }
         }
 
-        .article-preview {
+        .articles-list {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
@@ -237,34 +236,29 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html"><strong>Ken</strong></a></li>
             <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="now.html">Now</a></li>
             <li><a href="quotes.html">Quotes</a></li>
             <li><a href="book-registry.html">Book Registry</a></li>
-            <li><a href="now.html">Now</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="blog-header">
-            <h1>Blog</h1>
-            <p>Thoughts, ideas, and discoveries</p>
+            <p>Notes on thinking, living, and building — in public</p>
         </div>
 
         <div class="articles-list">
-            <article class="article-preview">
-                <h2>The Tug of War Between Peace & Building Wealth</h2>
-                <div class="article-meta">April 17, 2021</div>
-                <div class="article-excerpt">
-                    I assume most of us often ask how to be free and feel happy. Free to choose how to spend our time, fulfill our basic desires and our "calling". The mission I am currently trying to accomplish is to be financially free...
-                </div>
-                <a href="posts/article-peace-wealth.html" class="read-more">Read more</a>
-            </article>
+            <p>Building</p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
+        <div class="contact-link">
+            <p><a href="contact.html">Get In Touch</a></p>
+       </div>
+       <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
     </footer>
 </body>
 </html>

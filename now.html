@@ -38,9 +38,18 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        nav li:nth-child(2) {
+            margin-left: auto;
         }
 
         nav a {
@@ -49,6 +58,11 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        nav li:first-child a {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         nav a:hover {
@@ -88,7 +102,7 @@
         }
 
         .now-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
         }
 
@@ -100,16 +114,14 @@
         }
 
         .now-header p {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: #333333;
         }
 
         .now-content {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 0;
             margin-bottom: 3rem;
+            text-align: left;
         }
 
         .now-content p {
@@ -119,6 +131,41 @@
             margin-bottom: 1.5rem;
         }
 
+        .now-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #000000;
+            margin-top: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .now-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .now-content h3 + p {
+            margin-bottom: 0.5rem;
+        }
+
+        .now-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .now-content li {
+            font-size: 1.1rem;
+            color: #333333;
+            line-height: 1.5;
+            margin-bottom: 0.125rem;
+        }
+
+        .now-content a {
+            color: #000000;
+            text-decoration: underline;
+        }
+
         .contact-link {
             margin-top: 4rem;
             text-align: center;
@@ -126,15 +173,12 @@
 
         .contact-link a {
             color: #000000;
-            text-decoration: underline;
-            text-decoration-color: #999999;
-            text-underline-offset: 3px;
-            font-size: 1.1rem;
-            transition: text-decoration-color 0.3s ease;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
         }
 
         .contact-link a:hover {
-            text-decoration-color: #000000;
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -166,25 +210,27 @@
                 margin-bottom: 2rem;
             }
 
-            .now-content {
-                padding: 2rem 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
             nav ul {
-                flex-direction: column;
-                align-items: center;
                 gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 0.25rem 0.5rem;
             }
 
             main {
                 padding: 1.5rem 1.25rem;
+                margin-top: 60px;
             }
 
-            .now-content {
-                padding: 1.5rem 1.25rem;
-            }
         }
 
         /* Smooth fade-in animation */
@@ -207,33 +253,54 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html"><strong>Ken</strong></a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="now.html" class="active">Now</a></li>
             <li><a href="quotes.html">Quotes</a></li>
             <li><a href="book-registry.html">Book Registry</a></li>
-            <li><a href="now.html" class="active">Now</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="now-header">
-            <h1>Now</h1>
-            <p>Things I’m doing right now. Updated January 4th, 2026.</p>
-          
+            <p>This season’s focus and pursuits </p>
+            <p>Updated January 7th, 2026.</p> 
         </div>
 
         <div class="now-content">
-            <p>This website, DJing, 2 books per month and calisthenics.</p>
+
+            <h3>Creating versus Consuming</h3>
+            <p>Favoring output over noise</p>
+            <ul>
+                <li>This website : Learning how to code and the first steps of building a homebase for tinkerers</li>
+                <li>DJing : Most of my listening is consumed by live DJ shows, why not make my own sets?</li>
+            </ul>
+
+            <h3>Reading</h3>
+            <p>For thinking, generating ideas and exploring perspectives</p>
+            <ul>
+                <li>The Bitcoin Standard by Saifedean Ammous</li>
+                <li>A Thousand Blues by Cheon Seon-ran</li>
+            </ul>
+
+            <h3>Focusing on</h3>
+            <ul>
+                <li>Health : Calisthenics, sleep and diet</li>
+                <li>Relationships : Strengthening meaningful connections</li>
+                <li>AI : Exploring new tools and implementing them into my workflow</li>
+            </ul>
+
+            <p>This is a now page. If you have your own site, <a href="https://nownownow.com/about">you should make one too</a>.</p> 
         </div>
 
-        <div class="contact-link">
-             <p>This page is inspired by Derek Sivers.</p> 
-             <p><a href="contact.html">Get In Touch</a></p>
-        </div>
+        
     </main>
 
     <footer>
-        <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
+        <div class="contact-link">
+            <p><a href="contact.html">Get In Touch</a></p>
+       </div>
+       <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -38,9 +38,18 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        nav li:nth-child(2) {
+            margin-left: auto;
         }
 
         nav a {
@@ -49,6 +58,11 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        nav li:first-child a {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         nav a:hover {
@@ -88,7 +102,7 @@
         }
 
         .contact-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
         }
 
@@ -238,14 +252,22 @@
         }
 
         @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
             nav ul {
-                flex-direction: column;
-                align-items: center;
                 gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 0.25rem 0.5rem;
             }
 
             main {
                 padding: 1.5rem 1.25rem;
+                margin-top: 60px;
             }
 
             .contact-form {
@@ -273,11 +295,11 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html"><strong>Ken</strong></a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="now.html">Now</a></li>
             <li><a href="quotes.html">Quotes</a></li>
             <li><a href="book-registry.html">Book Registry</a></li>
-            <li><a href="now.html">Now</a></li>
         </ul>
     </nav>
 

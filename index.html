@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ken Gatera - Personal Website</title>
+    <title>Ken's Website</title>
     <style>
         * {
             margin: 0;
@@ -38,9 +38,18 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        nav li:nth-child(2) {
+            margin-left: auto;
         }
 
         nav a {
@@ -49,6 +58,11 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        nav li:first-child a {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         nav a:hover {
@@ -80,7 +94,7 @@
         }
 
         .home-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
         }
 
@@ -92,7 +106,7 @@
         }
 
         .home-header .subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-size: clamp(1.25rem, 2vw, 1.4rem);
             color: #333333;
             margin-bottom: 3rem;
         }
@@ -100,7 +114,7 @@
         .home-content {
             color: #333333;
             font-size: 1.1rem;
-            line-height: 1.8;
+            line-height: 1.5;
             text-align: left;
         }
 
@@ -120,24 +134,6 @@
             text-decoration-color: #000000;
         }
 
-        .contact-link {
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .contact-link a {
-            color: #000000;
-            text-decoration: underline;
-            text-decoration-color: #999999;
-            text-underline-offset: 3px;
-            font-size: 1.1rem;
-            transition: text-decoration-color 0.3s ease;
-        }
-
-        .contact-link a:hover {
-            text-decoration-color: #000000;
-        }
-
         nav a.active {
             color: #000000;
         }
@@ -154,6 +150,16 @@
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
             margin-top: 4rem;
+        }
+
+        .contact-link a {
+            color: #000000;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .contact-link a:hover {
+            text-decoration: underline;
         }
 
         /* Mobile Responsive */
@@ -177,14 +183,22 @@
         }
 
         @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
             nav ul {
-                flex-direction: column;
-                align-items: center;
                 gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 0.25rem 0.5rem;
             }
 
             main {
                 padding: 1.5rem 1.25rem;
+                margin-top: 60px;
             }
         }
 
@@ -209,32 +223,30 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html" class="active"><strong>Ken</strong></a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="now.html">Now</a></li>
             <li><a href="quotes.html">Quotes</a></li>
             <li><a href="book-registry.html">Book Registry</a></li>
-            <li><a href="now.html">Now</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="home-header">
-            <h1>Ken Gatera</h1>
-            <p class="subtitle">Welcome to my corner of the internet!</p>
+            <p class="subtitle">Hi, I'm Ken!</p>
         </div>
         <div class="home-content">
-            <p>A place born from a desire to record my thoughts in a meaningful way, share various projects, and connect with fellow explorers and curious minds along the way.</p>
-            <p>If you're new here, I would describe myself as a driven INFJ, lover of minimalist aesthetics and an aspiring Vibe Architect (more on this very soon).</p>
-            <p>This space explores a wide range of ideas, projects, and curiosities. Feel free to look around, and if something resonates: let's start a conversation <a href="contact.html">via the contact section</a>.</p>
-        </div>
-
-        <div class="contact-link">
-            <p><a href="contact.html">Get In Touch</a></p>
+            <p>Welcome to my corner of the internet. A place to record my thoughts and to connect with curious, thoughtful people along the way.</p>
+            <p>I enjoy solving problems, philosophizing, and desgining minimal interiors. I tend to collect hobbies, learning deeply before moving on. Following curiosity has led me through seemingly unrelated fields: robotics through mechanical engineering, the human body and physical training, construction management, and more recently, media through writing, coding, and DJing.</p>
+            <p>Here I collect thoughts on building things (structures, skills, understanding) and the threads I've found moving between them.</p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
+        <div class="contact-link">
+            <p><a href="contact.html">Get In Touch</a></p>
+       </div>
+       <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
     </footer>
 </body>
 </html>

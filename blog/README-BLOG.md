@@ -4,10 +4,12 @@ This directory includes a Python script to automatically convert markdown files 
 
 ## Folder Structure
 
+All blog-related files are organized in the `blog/` folder:
+
 - `drafts/` - Contains all markdown (`.md`) files for articles
 - `posts/` - Contains all generated HTML article files
-- `md_to_html.py` - Conversion script (in main folder)
-- `article-template.html` - HTML template for articles (in main folder)
+- `md_to_html.py` - Conversion script
+- `article-template.html` - HTML template for articles
 
 ## Setup
 
@@ -23,20 +25,28 @@ pip install markdown python-frontmatter
 
 ## Usage
 
-Convert a markdown file from `drafts/` to HTML in `posts/`:
+From the main blog directory, convert a markdown file from `blog/drafts/` to HTML in `blog/posts/`:
 ```bash
+python blog/md_to_html.py blog/drafts/<markdown_file.md>
+```
+
+Or from the `blog/` folder:
+```bash
+cd blog
 python md_to_html.py drafts/<markdown_file.md>
 ```
 
 Or use a shorter path (script will look in `drafts/` automatically):
 ```bash
+cd blog
 python md_to_html.py <markdown_file.md>
 ```
 
 Examples:
 ```bash
-python md_to_html.py drafts/first-blog-post.md
-python md_to_html.py first-blog-post.md  # Will look in drafts/
+python blog/md_to_html.py blog/drafts/first-blog-post.md
+cd blog && python md_to_html.py drafts/first-blog-post.md
+cd blog && python md_to_html.py first-blog-post.md  # Will look in drafts/
 ```
 
 This will create an HTML file named `article-<slugified-title>.html` in the `posts/` folder.
