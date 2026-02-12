@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Wishlist - Ken Gatera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #F5F5F5;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        nav li:nth-child(2) {
+            margin-left: auto;
+        }
+
+        nav a {
+            color: #666666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav li:first-child a {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: #000000;
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .books-header {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .books-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 0.5rem;
+            text-decoration: underline;
+        }
+
+        .books-header p {
+            font-size: 1.1rem;
+            color: #333333;
+            font-style: italic;
+        }
+
+        .books-header a {
+            color: #333333;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        .books-header a:hover {
+            border-bottom-color: rgba(51, 51, 51, 0.6);
+        }
+
+        .books-list {
+            padding: 0;
+            text-align: left;
+        }
+
+        .books-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .books-list li {
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            color: #333333;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .books-separator {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 3rem 0;
+        }
+
+        .books-details {
+            padding: 0;
+            text-align: left;
+        }
+
+        .books-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .books-details li {
+            font-size: 1.1rem;
+            color: #333333;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .books-details .book-title-author {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #000000;
+            display: block;
+        }
+
+        .books-details .book-description {
+            font-size: 1.1rem;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 4rem;
+        }
+
+        .contact-link a {
+            color: #000000;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .contact-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .books-header {
+                margin-bottom: 2rem;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 0.25rem 0.5rem;
+            }
+
+            main {
+                padding: 1.5rem 1.25rem;
+                margin-top: 60px;
+            }
+
+        }
+
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .books-list,
+        .books-details {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html"><strong>Ken</strong></a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="now.html">Now</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="books-header">
+            <h2>To read pile</h2>
+        </div>
+
+        <div class="books-list">
+            <ul>
+                <li>2024-12-17 — <strong>Cryptonomicon</strong> by Neal Stephenson</li>
+                <li>2024-12-17 — <strong>Anathem</strong> by Neal Stephenson</li>
+                <li>2024-12-16 — <strong>Intermezzo</strong> by Sally Rooney</li>
+                <li>2024-12-16 — <strong>Welcome to the Hyunam-dong Bookshop</strong> by Hwang Bo-Reum</li>
+                <li>2024-12-02 — <strong>Rental House</strong> by Weike Wang</li>
+                <li>2024-11-30 — <strong>The Gunslinger</strong> by Stephen King</li>
+                <li>2024-11-29 — <strong>The Unhappiness of Being a Single Man: Essential Stories</strong> by Franz Kafka</li>
+                <li>2024-11-23 — <strong>Emergent Tokyo: Designing the Spontaneous City</strong> by Jorge AlmazÃ¡n, Studiolab</li>
+                <li>2024-11-14 — <strong>The Power of Myth</strong> by Joseph Campbell, Bill Moyers</li>
+                <li>2024-11-14 — <strong>Falling Into Grace: Insights on the End of Suffering</strong> by Adyashanti</li>
+                <li>2024-11-14 — <strong>On the Genealogy of Morals</strong> by Friedrich Nietzsche</li>
+                <li>2024-11-14 — <strong>Awareness: Conversations with the Masters</strong> by Anthony de Mello</li>
+                <li>2024-11-14 — <strong>The Strategy of Conflict: With a New Preface by the Author</strong> by Thomas C. Schelling</li>
+                <li>2024-10-22 — <strong>Earthlings</strong> by Sayaka Murata</li>
+                <li>2024-09-28 — <strong>The Death of Vivek Oji</strong> by Akwaeke Emezi</li>
+                <li>2024-09-12 — <strong>Economic Facts and Fallacies</strong> by Thomas Sowell</li>
+                <li>2024-09-07 — <strong>The Paper Menagerie and Other Stories</strong> by Ken Liu</li>
+                <li>2024-09-07 — <strong>Hard-Boiled Wonderland and the End of the World</strong> by Haruki Murakami</li>
+                <li>2024-09-07 — <strong>Days at the Morisaki Bookshop</strong> by Satoshi Yagisawa</li>
+                <li>2024-08-17 — <strong>Bullshit Jobs: A Theory</strong> by David Graeber</li>
+                <li>2024-08-17 — <strong>Tourist: A New Theory of the Leisure Class</strong> by Dean MacCannell</li>
+                <li>2024-07-23 — <strong>Human Action: A Treatise on Economics</strong> by Ludwig von Mises</li>
+                <li>2024-07-19 — <strong>Lila: An Inquiry Into Morals</strong> by Robert M. Pirsig</li>
+                <li>2024-07-19 — <strong>Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values</strong> by Robert M. Pirsig</li>
+                <li>2024-06-29 — <strong>The Count of Monte Cristo</strong> by Alexandre Dumas</li>
+                <li>2024-06-19 — <strong>The Case Against Reality: Why Evolution Hid the Truth from Our Eyes</strong> by Donald D. Hoffman</li>
+                <li>2024-06-19 — <strong>The Farther Reaches of Human Nature</strong> by Abraham H. Maslow</li>
+                <li>2024-06-17 — <strong>A Theory of Socialism and Capitalism: Economics, Politics, and Ethics</strong> by Hans-Hermann Hoppe</li>
+                <li>2024-06-17 — <strong>Inventing the Individual: The Origins of Western Liberalism</strong> by Larry Siedentop</li>
+                <li>2024-05-21 — <strong>The Ape That Understood the Universe: How the Mind and Culture Evolve</strong> by Steve Stewart-Williams</li>
+                <li>2024-05-21 — <strong>Exhalation</strong> by Ted Chiang</li>
+                <li>2024-05-21 — <strong>The Book of Laughter and Forgetting</strong> by Milan Kundera</li>
+                <li>2024-05-16 — <strong>The Personal MBA: Master the Art of Business</strong> by Josh Kaufman</li>
+                <li>2024-05-06 — <strong>Thinking, Fast and Slow</strong> by Daniel Kahneman</li>
+                <li>2024-05-04 — <strong>Invisible Man</strong> by Ralph Ellison</li>
+                <li>2024-05-02 — <strong>Dark Matter</strong> by Blake Crouch</li>
+                <li>2024-04-09 — <strong>The Bitcoin Standard: The Decentralized Alternative to Central Banking</strong> by Saifedean Ammous</li>
+                <li>2024-04-08 — <strong>The Sovereign Individual: Mastering the Transition to the Information Age</strong> by William Rees-Mogg, James Dale Davidson</li>
+                <li>2024-04-03 — <strong>The Architecture of Happiness</strong> by Alain de Botton</li>
+                <li>2024-04-03 — <strong>The Surrender Experiment: My Journey Into Life&#x27;s Perfection</strong> by Michael A. Singer</li>
+                <li>2024-03-30 — <strong>What Makes Sammy Run?</strong> by Budd Schulberg</li>
+                <li>2024-03-16 — <strong>1Q84</strong> by Haruki Murakami</li>
+                <li>2024-03-16 — <strong>Peak: Secrets from the New Science of Expertise</strong> by Robert Pool, Anders Ericsson</li>
+                <li>2024-03-07 — <strong>Little, Big</strong> by John Crowley</li>
+                <li>2024-03-07 — <strong>One Hundred Years of Solitude</strong> by Gabriel GarcÃ­a MÃ¡rquez</li>
+                <li>2024-02-28 — <strong>Madonna in a Fur Coat</strong> by Sabahattin Ali</li>
+                <li>2024-02-26 — <strong>The Arabian Nights: Tales from a Thousand and One Nights</strong> by Anonymous</li>
+                <li>2024-02-11 — <strong>The End of Loneliness</strong> by Benedict Wells</li>
+                <li>2024-01-29 — <strong>The Road to Mecca</strong> by Muhammad Asad</li>
+                <li>2023-12-10 — <strong>To Be Taught, If Fortunate</strong> by Becky Chambers</li>
+                <li>2023-12-10 — <strong>The Collapsing Empire</strong> by John Scalzi</li>
+                <li>2023-10-26 — <strong>Straw Dogs: Thoughts on Humans and Other Animals</strong> by John N. Gray</li>
+                <li>2023-09-16 — <strong>Six of Crows</strong> by Leigh Bardugo</li>
+                <li>2023-09-15 — <strong>The Graveyard Book</strong> by Neil Gaiman</li>
+                <li>2023-09-15 — <strong>The Blade Itself</strong> by Joe Abercrombie</li>
+                <li>2023-09-15 — <strong>The Name of the Wind</strong> by Patrick Rothfuss</li>
+                <li>2023-09-04 — <strong>When Breath Becomes Air</strong> by Paul Kalanithi</li>
+                <li>2023-08-08 — <strong>Mere Christianity</strong> by C.S. Lewis</li>
+                <li>2023-07-26 — <strong>A Pattern Language: Towns, Buildings, Construction</strong> by Ingrid Fiksdahl-King, Christopher W. Alexander, Max Jacobson, Shlomo Angel, Murray Silverstein, Sara Ishikawa</li>
+                <li>2023-07-25 — <strong>The Magic Mountain</strong> by Thomas Mann</li>
+                <li>2023-07-25 — <strong>The Great Gatsby</strong> by F. Scott Fitzgerald</li>
+                <li>2023-06-03 — <strong>Brave New World</strong> by Aldous Huxley</li>
+                <li>2023-05-16 — <strong>The Diamond Age: Or, a Young Lady&#x27;s Illustrated Primer</strong> by Neal Stephenson</li>
+                <li>2023-05-14 — <strong>Vicious</strong> by V.E. Schwab</li>
+                <li>2023-05-14 — <strong>The Three-Body Problem</strong> by Cixin Liu</li>
+                <li>2023-05-01 — <strong>Shantaram</strong> by Gregory David Roberts</li>
+                <li>2023-04-25 — <strong>The Bhagavad Gita</strong> by Simon Brodbeck, Krishna-Dwaipayana Vyasa</li>
+                <li>2023-04-23 — <strong>How to Stop Worrying and Start Living</strong> by Dale Carnegie</li>
+                <li>2023-04-23 — <strong>A Guide to the Good Life: The Ancient Art of Stoic Joy</strong> by William B. Irvine</li>
+                <li>2023-03-27 — <strong>The Fabric of Reality: The Science of Parallel Universesâ€“And Its Implications</strong> by David Deutsch</li>
+                <li>2023-03-27 — <strong>The Beginning of Infinity: Explanations That Transform the World</strong> by David Deutsch</li>
+                <li>2023-03-21 — <strong>La Bête Integrale</strong> by David Goudreault</li>
+                <li>2023-03-17 — <strong>Fahrenheit 451</strong> by Ray Bradbury</li>
+                <li>2023-02-11 — <strong>The Midnight Library</strong> by Matt Haig</li>
+                <li>2023-01-23 — <strong>A Supposedly Fun Thing I&#x27;ll Never Do Again: Essays and Arguments</strong> by David Foster Wallace</li>
+                <li>2023-01-23 — <strong>The Last Good Kiss</strong> by James Crumley</li>
+                <li>2023-01-23 — <strong>Animal Farm</strong> by George Orwell</li>
+                <li>2022-07-26 — <strong>Use of Weapons</strong> by Iain M. Banks</li>
+                <li>2022-07-26 — <strong>The Final Empire</strong> by Brandon Sanderson</li>
+                <li>2022-06-29 — <strong>Digital Minimalism: Choosing a Focused Life in a Noisy World</strong> by Cal Newport</li>
+                <li>2022-06-29 — <strong>Bonnie and Clyde: The Lives Behind the Legend</strong> by Paul Schneider</li>
+                <li>2022-06-29 — <strong>Born a Crime: Stories From a South African Childhood</strong> by Trevor Noah</li>
+                <li>2022-06-29 — <strong>Of Mice and Men</strong> by John Steinbeck</li>
+                <li>2021-10-13 — <strong>Homo Deus: A Brief History of Tomorrow</strong> by Yuval Noah Harari</li>
+                <li>2021-08-19 — <strong>The History of the Peloponnesian War</strong> by Thucydides</li>
+                <li>2021-02-01 — <strong>21 Lessons for the 21st Century</strong> by Yuval Noah Harari</li>
+                <li>2020-12-23 — <strong>Metaphors We Live by</strong> by Mark Johnson, George Lakoff</li>
+                <li>2020-12-02 — <strong>The Infinite Game</strong> by Simon Sinek</li>
+                <li>2020-10-18 — <strong>Sapiens: A Brief History of Humankind</strong> by Yuval Noah Harari</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
+
