@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Registry - Ken Gatera</title>
+    <title>Book Registry - Ken</title>
     <style>
         * {
             margin: 0;
@@ -103,19 +103,21 @@
 
         .books-header {
             text-align: left;
-            margin-bottom: 3rem;
+            margin-bottom: 0;
         }
 
-        .books-header h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        .books-header h2 {
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
             color: #000000;
+            margin-bottom: 0.5rem;
+            text-decoration: underline;
         }
 
         .books-header p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #333333;
+            font-style: italic;
         }
 
         .books-header a {
@@ -126,6 +128,27 @@
         }
 
         .books-header a:hover {
+            border-bottom-color: rgba(51, 51, 51, 0.6);
+        }
+
+        .books-header-secondary {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .books-header-secondary p {
+            font-size: 1rem;
+            color: #333333;
+        }
+
+        .books-header-secondary a {
+            color: #333333;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        .books-header-secondary a:hover {
             border-bottom-color: rgba(51, 51, 51, 0.6);
         }
 
@@ -146,42 +169,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .books-separator {
-            height: 1px;
-            background-color: #e0e0e0;
-            margin: 3rem 0;
-        }
-
-        .books-details {
-            padding: 0;
-            text-align: left;
-        }
-
-        .books-details ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .books-details li {
-            font-size: 1.1rem;
-            color: #333333;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .books-details .book-title-author {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: #000000;
-            display: block;
-        }
-
-        .books-details .book-description {
-            font-size: 1.1rem;
-            color: #333333;
-            line-height: 1.8;
-        }
 
         /* Footer */
         footer {
@@ -257,8 +244,7 @@
             }
         }
 
-        .books-list,
-        .books-details {
+        .books-list {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
@@ -267,43 +253,81 @@
     <nav>
         <ul>
             <li><a href="index.html"><strong>Ken</strong></a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="writing.html">Writing</a></li>
             <li><a href="now.html">Now</a></li>
-            <li><a href="quotes.html">Quotes</a></li>
-            <li><a href="book-registry.html" class="active">Book Registry</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="books-header">
-            <p>Books read, rated, and annotated with personal reflections</p>
-            <p>See my <a href="now.html">Now page</a> for what I'm currently reading</p>
+            <h2>List of books read</h2>
+        </div>
+
+        <div class="books-header-secondary">
+            <p><a href="now.html">Current reads (now page)</a> /  <a href="book-wishlist.html">Future reads</a></p>
         </div>
 
         <div class="books-list">
             <ul>
-                <li>★★★★☆ — 2024-12-15 — <strong>Stranger in a Strange Land</strong> by Robert A. Heinlein</li>
-            </ul>
-        </div>
-
-        <div class="books-separator"></div>
-
-        <div class="books-details">
-            <ul>
-                <li>
-                    <span class="book-title-author"><strong>Stranger in a Strange Land</strong> by Robert A. Heinlein</span>
-                    <div class="book-description">Interesting and different POV on metaphysics, religion and bonding as human.</div>
-                </li>
+                <li>2025-07-11 — <strong>Red Rising</strong> by Pierce Brown ★★★★★</li>
+                <li>2025-01-13 — <strong>Illusions: The Adventures of a Reluctant Messiah</strong> by Richard Bach</li>
+                <li>2024-12-02 — <strong>The Paper Menagerie</strong> by Ken Liu ★★★★★</li>
+                <li>2024-11-24 — <strong>How to Live: 27 conflicting answers and one weird conclusion</strong> by Derek Sivers ★★★★☆</li>
+                <li>2024-11-23 — <strong>How Buildings Learn: What Happens After They&#x27;re Built</strong> by Stewart Brand</li>
+                <li>2024-11-02 — <strong>The Virtue of Selfishness: A New Concept of Egoism</strong> by Ayn Rand</li>
+                <li>2024-11-01 — <strong>Anthem</strong> by Ayn Rand ★★★★★</li>
+                <li>2024-10-15 — <strong>Out from the Heart</strong> by James Allen ★★★★★</li>
+                <li>2024-10-05 — <strong>The Course of Love</strong> by Alain de Botton ★★★★★</li>
+                <li>2024-10-05 — <strong>The 4-Hour Workweek</strong> by Timothy Ferriss</li>
+                <li>2024-09-19 — <strong>Snow Crash</strong> by Neal Stephenson ★★★★☆</li>
+                <li>2024-08-17 — <strong>Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets</strong> by Nassim Nicholas Taleb ★★★★☆</li>
+                <li>2024-07-24 — <strong>Mais Esperto que o Diabo: O mistÃ©rio revelado da liberdade e do sucesso</strong> by Napoleon Hill ★★★★★</li>
+                <li>2024-07-24 — <strong>Greenlights</strong> by Matthew McConaughey</li>
+                <li>2024-07-24 — <strong>Thinking in Bets: Making Smarter Decisions When You Don&#x27;t Have All the Facts</strong> by Annie Duke</li>
+                <li>2024-07-10 — <strong>Neuromancer</strong> by William Gibson ★★★☆☆</li>
+                <li>2024-06-02 — <strong>How Proust Can Change Your Life</strong> by Alain de Botton ★★★★★</li>
+                <li>2024-05-23 — <strong>The Algebra of Wealth: A Simple Formula for Financial Security</strong> by Scott Galloway ★★★★★</li>
+                <li>2024-05-11 — <strong>How to Win Friends &amp; Influence People</strong> by Dale Carnegie</li>
+                <li>2024-05-05 — <strong>The Bed of Procrustes: Philosophical and Practical Aphorisms</strong> by Nassim Nicholas Taleb ★★★★☆</li>
+                <li>2024-05-03 — <strong>Antifragile: Things That Gain from Disorder</strong> by Nassim Nicholas Taleb ★★★★★</li>
+                <li>2024-05-02 — <strong>Four Seasons: The Story of a Business Philosophy</strong> by Isadore Sharp ★★★☆☆</li>
+                <li>2024-03-16 — <strong>Dune Messiah</strong> by Frank Herbert ★★★★☆</li>
+                <li>2023-12-10 — <strong>Your Next Five Moves: Master the Art of Business Strategy</strong> by Patrick Bet-David</li>
+                <li>2023-12-10 — <strong>The Fountainhead</strong> by Ayn Rand ★★★★☆</li>
+                <li>2023-08-24 — <strong>Flowers for Algernon</strong> by Daniel Keyes ★★★★★</li>
+                <li>2023-08-02 — <strong>Norwegian Wood</strong> by Haruki Murakami ★★★★★</li>
+                <li>2023-07-14 — <strong>Salt to the Sea</strong> by Ruta Sepetys ★★★★☆</li>
+                <li>2023-07-14 — <strong>Excellent Advice for Living</strong> by Kevin Kelly ★★★★★</li>
+                <li>2023-07-12 — <strong>1984</strong> by George Orwell</li>
+                <li>2023-05-21 — <strong>Atlas Shrugged</strong> by Ayn Rand ★★★★★</li>
+                <li>2023-05-21 — <strong>Stranger in a Strange Land</strong> by Robert A. Heinlein ★★★★★</li>
+                <li>2023-03-17 — <strong>How Adam Smith Can Change Your Life: An Unexpected Guide to Human Nature and Happiness</strong> by Russell &quot;Russ&quot; Roberts, Russell &quot;Russ&quot; Roberts ★★★★☆</li>
+                <li>2023-03-17 — <strong>Flow: The Psychology of Optimal Experience</strong> by Mihaly Csikszentmihalyi ★★★☆☆</li>
+                <li>2023-03-17 — <strong>Kafka on the Shore</strong> by Haruki Murakami ★★★★☆</li>
+                <li>2022-09-13 — <strong>Stories of Your Life and Others</strong> by Ted Chiang ★★★★☆</li>
+                <li>2022-07-26 — <strong>The Player of Games</strong> by Iain M. Banks</li>
+                <li>2022-07-14 — <strong>Quiet: The Power of Introverts in a World That Can&#x27;t Stop Talking</strong> by Susan Cain ★★★★★</li>
+                <li>2022-07-03 — <strong>The Prophet</strong> by Kahlil Gibran ★★★★★</li>
+                <li>2022-07-03 — <strong>How to Invest in Real Estate: The Ultimate Beginner&#x27;s Guide to Getting Started</strong> by Brandon Turner, Joshua Dorkin ★★★★☆</li>
+                <li>2022-07-03 — <strong>As a Man Thinketh</strong> by James Allen ★★★★★</li>
+                <li>2022-06-29 — <strong>The Five People You Meet in Heaven</strong> by Mitch Albom ★★★★☆</li>
+                <li>2022-06-29 — <strong>On the Shortness of Life: Life Is Long If You Know How to Use It</strong> by Lucius Annaeus Seneca ★★★★★</li>
+                <li>2022-04-11 — <strong>The Lion Tracker&#x27;s Guide to Life</strong> by Boyd Varty ★★★★★</li>
+                <li>2021-09-07 — <strong>Anything You Want: 40 Lessons for a New Kind of Entrepreneur</strong> by Derek Sivers ★★★★★</li>
+                <li>2021-07-12 — <strong>1984 [Illustrated]: Nineteen Eighty-Four</strong> by George Orwell ★★★★★</li>
+                <li>2021-05-27 — <strong>The Almanack of Naval Ravikant: A Guide to Wealth and Happiness</strong> by Eric Jorgenson ★★★★★</li>
+                <li>2021-02-11 — <strong>The Giver</strong> by Lois Lowry ★★★★★</li>
+                <li>2021-01-08 — <strong>12 Rules for Life: An Antidote to Chaos</strong> by Jordan B. Peterson ★★★★☆</li>
+                <li>2021-01-08 — <strong>The Laws of Human Nature</strong> by Robert Greene ★★★★★</li>
+                <li>2021-01-08 — <strong>Mindful Landlord: How to Run Rental Property for Profit and Peace of Mind</strong> by Terrie Schauer ★★★★★</li>
+                <li>2021-01-08 — <strong>Ender&#x27;s Game</strong> by Orson Scott Card ★★★★★</li>
+                <li>2021-01-08 — <strong>Tools of Titans: The Tactics, Routines, and Habits of Billionaires, Icons, and World-Class Performers</strong> by Timothy Ferriss ★★★★★</li>
+                <li>2021-01-08 — <strong>The Intelligent Investor</strong> by Benjamin Graham ★★★★☆</li>
+                <li>2021-01-08 — <strong>Money Master the Game: 7 Simple Steps to Financial Freedom</strong> by Tony Robbins ★★★★★</li>
+                <li>2020-12-21 — <strong>Dune</strong> by Frank Herbert ★★★★★</li>
             </ul>
         </div>
     </main>
-
-    <footer>
-        <div class="contact-link">
-            <p><a href="contact.html">Get In Touch</a></p>
-       </div>
-       <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
-    </footer>
 </body>
 </html>
 

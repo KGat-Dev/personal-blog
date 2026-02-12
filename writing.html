@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotes - Ken Gatera</title>
+    <title>Writing - Ken Gatera</title>
     <style>
         * {
             margin: 0;
@@ -101,38 +101,59 @@
             margin-right: auto;
         }
 
-        .quotes-header {
+        .blog-header {
             text-align: left;
             margin-bottom: 3rem;
         }
 
-        .quotes-header h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        .blog-header h2 {
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
             color: #000000;
+            margin-bottom: 0.5rem;
+            text-decoration: underline;
         }
 
-        .quotes-header p {
-            font-size: 1.25rem;
+        .blog-header p {
+            font-size: 1.1rem;
             color: #333333;
+            font-style: italic;
         }
 
-        .quotes-list {
+        .articles-list {
             padding: 0;
             text-align: left;
         }
 
-        .quotes-list ul {
+        .articles-list ul {
             list-style-type: none;
             padding-left: 0;
         }
 
-        .quotes-list li {
-            font-size: 1.1rem;
+        .articles-list li {
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
             color: #333333;
-            line-height: 1.8;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
+        }
+
+        .articles-list a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .articles-list a:hover {
+            color: #333333;
+            text-decoration: underline;
+        }
+
+        .articles-list .article-meta {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-right: 0.5rem;
         }
 
         /* Footer */
@@ -170,7 +191,7 @@
                 padding: 2rem 1.5rem;
             }
 
-            .quotes-header {
+            .blog-header {
                 margin-bottom: 2rem;
             }
 
@@ -209,7 +230,7 @@
             }
         }
 
-        .quotes-list {
+        .articles-list {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
@@ -218,31 +239,21 @@
     <nav>
         <ul>
             <li><a href="index.html"><strong>Ken</strong></a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="writing.html" class="active">Writing</a></li>
             <li><a href="now.html">Now</a></li>
-            <li><a href="quotes.html" class="active">Quotes</a></li>
-            <li><a href="book-registry.html">Book Registry</a></li>
         </ul>
     </nav>
 
     <main>
-        <div class="quotes-header">
-            <p>Fragments of clarity — A collection of aphorisms and principles</p>
+        <div class="blog-header">
+            <h2>Writing</h2>
+            <p>Notes on building and thinking — in public</p>
         </div>
 
-        <div class="quotes-list">
-            <ul>
-                <li>"Insert something by A. Rand here..." — TBD</li>
-            </ul>
+        <div class="articles-list">
+            <p>Building</p>
         </div>
     </main>
-
-    <footer>
-        <div class="contact-link">
-            <p><a href="contact.html">Get In Touch</a></p>
-       </div>
-       <p>&copy; 2025 Ken Gatera. All rights reserved.</p>
-    </footer>
 </body>
 </html>
 
