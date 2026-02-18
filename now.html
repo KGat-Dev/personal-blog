@@ -23,102 +23,48 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(245, 245, 245, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav li:first-child {
-            margin-right: auto;
-        }
-
-        nav li:nth-child(2) {
-            margin-left: auto;
-        }
-
-        nav a {
-            color: #666666;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav li:first-child a {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        nav a:hover {
-            color: #000000;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #000000;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a.active {
-            color: #000000;
-        }
-
-        nav a.active::after {
-            width: 100%;
-        }
+        /* Navigation - removed fixed nav */
 
         /* Main Content */
         main {
-            margin-top: 80px;
             padding: 3rem 2rem;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .now-header {
+        .home-header {
             text-align: left;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
 
-        .now-header h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
+        .home-header p {
+            font-size: 1.1rem;
+            color: #333333;
             margin-bottom: 1rem;
+        }
+
+        .home-header a {
             color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .home-header a:hover {
+            color: #333333;
+            text-decoration: underline;
+        }
+
+        .now-header {
+            text-align: left;
+            margin-bottom: 1rem;
         }
 
         .now-header h2 {
-            font-size: 1.5rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            color: #000000;
             margin-bottom: 0.5rem;
-            text-decoration: underline;
+            color: #000000;
         }
 
         .now-header p {
@@ -129,22 +75,21 @@
 
         .now-content {
             padding: 0;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             text-align: left;
         }
 
         .now-content p {
             font-size: 1.1rem;
             color: #333333;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .now-content h3 {
             font-size: 1.3rem;
             font-weight: 600;
             color: #000000;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             margin-bottom: 0.25rem;
         }
 
@@ -157,22 +102,29 @@
         }
 
         .now-content ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
+            list-style-type: none;
+            padding-left: 0;
             margin-top: 0.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .now-content li {
             font-size: 1.1rem;
             color: #333333;
-            line-height: 1.5;
-            margin-bottom: 0.125rem;
+            margin-bottom: 0.5rem;
         }
 
         .now-content a {
             color: #000000;
             text-decoration: underline;
+        }
+
+        /* Header Separator */
+        .header-separator {
+            height: 1px;
+            background-color: #000000;
+            margin: 0.75rem 0 2rem 0;
+            width: 100%;
         }
 
         .now-page-note {
@@ -191,71 +143,25 @@
             color: #000000;
         }
 
-        .contact-link {
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .contact-link a {
-            color: #000000;
-            text-decoration: none;
-            transition: text-decoration 0.3s ease;
-        }
-
-        .contact-link a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666666;
-            font-size: 0.9rem;
-            border-top: 1px solid #e0e0e0;
-            margin-top: 4rem;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
             main {
                 padding: 2rem 1.5rem;
             }
 
-            .now-header {
-                margin-bottom: 2rem;
+            .home-header {
+                margin-bottom: 1rem;
             }
 
+            .now-header {
+                margin-bottom: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
-            nav {
-                padding: 0.75rem 1rem;
-            }
-
-            nav ul {
-                gap: 0.5rem;
-                font-size: 0.8rem;
-            }
-
-            nav a {
-                padding: 0.25rem 0.5rem;
-            }
-
             main {
                 padding: 1.5rem 1.25rem;
-                margin-top: 60px;
             }
-
         }
 
         /* Smooth fade-in animation */
@@ -270,47 +176,39 @@
             }
         }
 
+        .home-header,
         .now-content {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html"><strong>Ken</strong></a></li>
-            <li><a href="writing.html">Writing</a></li>
-            <li><a href="now.html" class="active">Now</a></li>
-        </ul>
-    </nav>
-
     <main>
+        <div class="home-header">
+            <p><a href="index.html">Ken Gatera</a></p>
+        </div>
         <div class="now-header">
             <h2>Now</h2>
             <p>Updated January 24th, 2026.</p> 
         </div>
+        <div class="header-separator"></div>
 
         <div class="now-content">
 
-            <h3>Focusing on</h3>
-            <p>Favoring output over noise</p>
-            <p>Health, relationships, DJing & building this website.</p>
-
             <h3>Reading</h3>
-            <p>For thinking, generating ideas and exploring perspectives</p>
-            <p>Past books I've read can be found <a href="book-registry.html">here</a>. </p>
-           
+            <p>An overview of my process for reading is available on this <a href="book-page.html">Book Page</a>. Currently reading: Things become other things (Craig Mod), Iron Gold (Pierce Brown) and Thinking in Systems (Donella Meadows). </p>
+
+            <h3>Programming</h3>
+            <p>Creating this website using agentic tools (Cursor and Claude). The entry point to create new projects has never been so accessible. I am excited to create new applications to support my day to day.</p>
 
             <h3>Thinking about</h3>
             <ul>
-                <li>Systematizing my work through software. </li>
-                <li>The impocation of AI on productivity & innovation. </li>
-                <li>The rise of generalist leaders in this new environment. </li>
+                <li>Leveraging technology to optimize workflows and free-up time for high-value strategic work. </li>
             </ul>
         </div>
 
         <div class="now-page-note">
-            <p>This is a now page. If you have your own site, <a href="https://nownownow.com/about">you should make one too</a>.</p>
+            <p>This is a <a href="https://nownownow.com/about">now page</a>. If you have your own site, you should make one too.</p>
         </div>
         
     </main>

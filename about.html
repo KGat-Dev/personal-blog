@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ken's Website</title>
+    <title>About - Ken's Website</title>
     <style>
         * {
             margin: 0;
@@ -35,7 +35,7 @@
 
         .home-header {
             text-align: left;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
 
         .home-header h1 {
@@ -48,7 +48,18 @@
         .home-header p {
             font-size: 1.1rem;
             color: #333333;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .home-header a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .home-header a:hover {
+            color: #333333;
+            text-decoration: underline;
         }
 
         .home-header .subtitle {
@@ -57,18 +68,36 @@
             margin-bottom: 1rem;
         }
 
-        .home-content {
+        .about-header {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .about-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .about-header p {
+            font-size: 1.1rem;
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .about-content {
             color: #333333;
             font-size: 1.1rem;
             line-height: 1.5;
             text-align: left;
         }
 
-        .home-content p {
+        .about-content p {
             margin-bottom: 1.5rem;
         }
 
-        .home-content a {
+        .about-content a {
             color: #000000;
             text-decoration: underline;
             text-decoration-color: #999999;
@@ -76,22 +105,30 @@
             transition: text-decoration-color 0.3s ease;
         }
 
-        .home-content a:hover {
+        .about-content a:hover {
             text-decoration-color: #000000;
+        }
+
+        /* Header Separator */
+        .header-separator {
+            height: 1px;
+            background-color: #000000;
+            margin: 0.75rem 0 2rem 0;
+            width: 100%;
         }
 
         /* Content Separator */
         .content-separator {
             height: 1px;
             background-color: #e0e0e0;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             width: 100%;
         }
 
         /* Page Navigation Section */
         .page-navigation {
-            margin-top: 2rem;
-            padding-top: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
         }
 
         .page-navigation ul {
@@ -139,6 +176,7 @@
             width: 100%;
         }
 
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             main {
@@ -146,23 +184,13 @@
             }
 
             .home-header {
-                margin-bottom: 2rem;
-            }
-
-            .page-navigation ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+                margin-bottom: 1rem;
             }
         }
 
         @media (max-width: 480px) {
             main {
                 padding: 1.5rem 1.25rem;
-            }
-
-            .page-navigation ul {
-                gap: 0.5rem;
-                font-size: 0.8rem;
             }
         }
 
@@ -179,7 +207,8 @@
         }
 
         .home-header,
-        .home-content,
+        .about-header,
+        .about-content,
         .page-navigation {
             animation: fadeIn 0.6s ease-out;
         }
@@ -188,20 +217,22 @@
 <body>
     <main>
         <div class="home-header">
-            <h1><strong>Ken Gatera</strong></h1>
-            <p>PROJECT LEADER</p>
+            <p><a href="index.html">Ken Gatera</a></p>
         </div>
-        <div class="home-content"> 
-            <p>I'm fascinated by how things get built — not just physically, but organizationally. Over the past decade, following my curiosity has taken me through robotics, industrial automation, and construction management. Across each field, I've come to see projects as problems best solved by breaking them into measurable components, building feedback loops around each unit, and iterating until the whole system performs reliably.</p>
-            <p>Over time, I've become increasingly interested in the systems behind consistent performance — how projects, teams, and organizations are structured to deliver reliably across phases, constraints, and from planning through delivery.</p>
-            <p>This space documents lessons from delivering complex high-stakes projects, improving organizational workflows, and applying systems thinking to complex, real-world operating environments.</p>
+        <div class="about-header">
+            <h2>About</h2>
         </div>
-        
+        <div class="header-separator"></div>
+        <div class="about-content"> 
+            <p>Leading complex construction projects taught me that success depends as much on coordination, incentives, and decision quality as it does on technical design. Working with clients, contractors, designers, and other professionals has shaped how I approach execution: clarity beats complexity, and well-designed systems outperform heroic effort under pressure.</p>
+            <p>Since 2020, I have led high-end residential and commercial projects through execution and delivery, overseeing technical risk, stakeholder alignment and performance on both budget and schedule.</p>
+            <p>Today, I help teams design and run better execution systems — improving decision quality, reducing coordination friction, and increasing delivery predictability in complex environments.</p>
+        </div>
+
         <div class="content-separator"></div>
         
         <div class="page-navigation">
             <ul>
-                <li><a href="about.html">About</a></li>
                 <li><a href="writing.html">Writing</a></li>
                 <li><a href="now.html">Now</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -210,3 +241,4 @@
     </main>
 </body>
 </html>
+

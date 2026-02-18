@@ -23,82 +23,35 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(245, 245, 245, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav li:first-child {
-            margin-right: auto;
-        }
-
-        nav li:nth-child(2) {
-            margin-left: auto;
-        }
-
-        nav a {
-            color: #666666;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav li:first-child a {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        nav a:hover {
-            color: #000000;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #000000;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a.active {
-            color: #000000;
-        }
-
-        nav a.active::after {
-            width: 100%;
-        }
+        /* Navigation - removed fixed nav */
 
         /* Main Content */
         main {
-            margin-top: 80px;
             padding: 3rem 2rem;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .home-header {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .home-header p {
+            font-size: 1.1rem;
+            color: #333333;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-header a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .home-header a:hover {
+            color: #333333;
         }
 
         .books-header {
@@ -192,44 +145,23 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
             main {
                 padding: 2rem 1.5rem;
+            }
+
+            .home-header {
+                margin-bottom: 2rem;
             }
 
             .books-header {
                 margin-bottom: 2rem;
             }
-
         }
 
         @media (max-width: 480px) {
-            nav {
-                padding: 0.75rem 1rem;
-            }
-
-            nav ul {
-                gap: 0.5rem;
-                font-size: 0.8rem;
-            }
-
-            nav a {
-                padding: 0.25rem 0.5rem;
-            }
-
             main {
                 padding: 1.5rem 1.25rem;
-                margin-top: 60px;
             }
-
         }
 
         /* Smooth fade-in animation */
@@ -244,27 +176,23 @@
             }
         }
 
+        .home-header,
         .books-list {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html"><strong>Ken</strong></a></li>
-            <li><a href="writing.html">Writing</a></li>
-            <li><a href="now.html">Now</a></li>
-        </ul>
-    </nav>
-
     <main>
+        <div class="home-header">
+            <p><a href="index.html"><strong>Ken Gatera</strong></a></p>
+        </div>
         <div class="books-header">
             <h2>List of books read</h2>
         </div>
 
         <div class="books-header-secondary">
-            <p><a href="now.html">Current reads (now page)</a> /  <a href="book-wishlist.html">Future reads</a></p>
+            <p><a href="book-page.html">Book page</a> /  <a href="book-wishlist.html">Future reads</a></p>
         </div>
 
         <div class="books-list">
@@ -281,7 +209,7 @@
                 <li>2024-10-05 — <strong>The 4-Hour Workweek</strong> by Timothy Ferriss</li>
                 <li>2024-09-19 — <strong>Snow Crash</strong> by Neal Stephenson ★★★★☆</li>
                 <li>2024-08-17 — <strong>Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets</strong> by Nassim Nicholas Taleb ★★★★☆</li>
-                <li>2024-07-24 — <strong>Mais Esperto que o Diabo: O mistÃ©rio revelado da liberdade e do sucesso</strong> by Napoleon Hill ★★★★★</li>
+                <li>2024-07-24 — <strong>Outwitting the Devil</strong> by Napoleon Hill ★★★★★</li>
                 <li>2024-07-24 — <strong>Greenlights</strong> by Matthew McConaughey</li>
                 <li>2024-07-24 — <strong>Thinking in Bets: Making Smarter Decisions When You Don&#x27;t Have All the Facts</strong> by Annie Duke</li>
                 <li>2024-07-10 — <strong>Neuromancer</strong> by William Gibson ★★★☆☆</li>
@@ -301,7 +229,7 @@
                 <li>2023-07-12 — <strong>1984</strong> by George Orwell</li>
                 <li>2023-05-21 — <strong>Atlas Shrugged</strong> by Ayn Rand ★★★★★</li>
                 <li>2023-05-21 — <strong>Stranger in a Strange Land</strong> by Robert A. Heinlein ★★★★★</li>
-                <li>2023-03-17 — <strong>How Adam Smith Can Change Your Life: An Unexpected Guide to Human Nature and Happiness</strong> by Russell &quot;Russ&quot; Roberts, Russell &quot;Russ&quot; Roberts ★★★★☆</li>
+                <li>2023-03-17 — <strong>How Adam Smith Can Change Your Life: An Unexpected Guide to Human Nature and Happiness</strong> by Russell &quot;Russ&quot; Roberts ★★★★☆</li>
                 <li>2023-03-17 — <strong>Flow: The Psychology of Optimal Experience</strong> by Mihaly Csikszentmihalyi ★★★☆☆</li>
                 <li>2023-03-17 — <strong>Kafka on the Shore</strong> by Haruki Murakami ★★★★☆</li>
                 <li>2022-09-13 — <strong>Stories of Your Life and Others</strong> by Ted Chiang ★★★★☆</li>

@@ -23,87 +23,40 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(245, 245, 245, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav li:first-child {
-            margin-right: auto;
-        }
-
-        nav li:nth-child(2) {
-            margin-left: auto;
-        }
-
-        nav a {
-            color: #666666;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav li:first-child a {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        nav a:hover {
-            color: #000000;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #000000;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a.active {
-            color: #000000;
-        }
-
-        nav a.active::after {
-            width: 100%;
-        }
+        /* Navigation - removed fixed nav */
 
         /* Main Content */
         main {
-            margin-top: 80px;
             padding: 3rem 2rem;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .books-header {
+        .home-header {
             text-align: left;
             margin-bottom: 3rem;
+        }
+
+        .home-header p {
+            font-size: 1.1rem;
+            color: #333333;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-header a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .home-header a:hover {
+            color: #333333;
+        }
+
+        .books-header {
+            text-align: left;
+            margin-bottom: 0;
         }
 
         .books-header h2 {
@@ -128,6 +81,27 @@
         }
 
         .books-header a:hover {
+            border-bottom-color: rgba(51, 51, 51, 0.6);
+        }
+
+        .books-header-secondary {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .books-header-secondary p {
+            font-size: 1rem;
+            color: #333333;
+        }
+
+        .books-header-secondary a {
+            color: #333333;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        .books-header-secondary a:hover {
             border-bottom-color: rgba(51, 51, 51, 0.6);
         }
 
@@ -207,44 +181,23 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
             main {
                 padding: 2rem 1.5rem;
+            }
+
+            .home-header {
+                margin-bottom: 2rem;
             }
 
             .books-header {
                 margin-bottom: 2rem;
             }
-
         }
 
         @media (max-width: 480px) {
-            nav {
-                padding: 0.75rem 1rem;
-            }
-
-            nav ul {
-                gap: 0.5rem;
-                font-size: 0.8rem;
-            }
-
-            nav a {
-                padding: 0.25rem 0.5rem;
-            }
-
             main {
                 padding: 1.5rem 1.25rem;
-                margin-top: 60px;
             }
-
         }
 
         /* Smooth fade-in animation */
@@ -259,6 +212,7 @@
             }
         }
 
+        .home-header,
         .books-list,
         .books-details {
             animation: fadeIn 0.6s ease-out;
@@ -266,17 +220,16 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html"><strong>Ken</strong></a></li>
-            <li><a href="writing.html">Writing</a></li>
-            <li><a href="now.html">Now</a></li>
-        </ul>
-    </nav>
-
     <main>
+        <div class="home-header">
+            <p><a href="index.html"><strong>Ken Gatera</strong></a></p>
+        </div>
         <div class="books-header">
             <h2>To read pile</h2>
+        </div>
+
+        <div class="books-header-secondary">
+            <p><a href="book-page.html">Book page</a> /  <a href="book-registry.html">Past reads</a></p>
         </div>
 
         <div class="books-list">
@@ -288,7 +241,7 @@
                 <li>2024-12-02 — <strong>Rental House</strong> by Weike Wang</li>
                 <li>2024-11-30 — <strong>The Gunslinger</strong> by Stephen King</li>
                 <li>2024-11-29 — <strong>The Unhappiness of Being a Single Man: Essential Stories</strong> by Franz Kafka</li>
-                <li>2024-11-23 — <strong>Emergent Tokyo: Designing the Spontaneous City</strong> by Jorge AlmazÃ¡n, Studiolab</li>
+                <li>2024-11-23 — <strong>Emergent Tokyo: Designing the Spontaneous City</strong> by Jorge Almazán, Studiolab</li>
                 <li>2024-11-14 — <strong>The Power of Myth</strong> by Joseph Campbell, Bill Moyers</li>
                 <li>2024-11-14 — <strong>Falling Into Grace: Insights on the End of Suffering</strong> by Adyashanti</li>
                 <li>2024-11-14 — <strong>On the Genealogy of Morals</strong> by Friedrich Nietzsche</li>
@@ -325,7 +278,7 @@
                 <li>2024-03-16 — <strong>1Q84</strong> by Haruki Murakami</li>
                 <li>2024-03-16 — <strong>Peak: Secrets from the New Science of Expertise</strong> by Robert Pool, Anders Ericsson</li>
                 <li>2024-03-07 — <strong>Little, Big</strong> by John Crowley</li>
-                <li>2024-03-07 — <strong>One Hundred Years of Solitude</strong> by Gabriel GarcÃ­a MÃ¡rquez</li>
+                <li>2024-03-07 — <strong>One Hundred Years of Solitude</strong> by Gabriel García Márquez</li>
                 <li>2024-02-28 — <strong>Madonna in a Fur Coat</strong> by Sabahattin Ali</li>
                 <li>2024-02-26 — <strong>The Arabian Nights: Tales from a Thousand and One Nights</strong> by Anonymous</li>
                 <li>2024-02-11 — <strong>The End of Loneliness</strong> by Benedict Wells</li>
@@ -350,7 +303,7 @@
                 <li>2023-04-25 — <strong>The Bhagavad Gita</strong> by Simon Brodbeck, Krishna-Dwaipayana Vyasa</li>
                 <li>2023-04-23 — <strong>How to Stop Worrying and Start Living</strong> by Dale Carnegie</li>
                 <li>2023-04-23 — <strong>A Guide to the Good Life: The Ancient Art of Stoic Joy</strong> by William B. Irvine</li>
-                <li>2023-03-27 — <strong>The Fabric of Reality: The Science of Parallel Universesâ€“And Its Implications</strong> by David Deutsch</li>
+                <li>2023-03-27 — <strong>The Fabric of Reality: The Science of Parallel Universes—And Its Implications</strong> by David Deutsch</li>
                 <li>2023-03-27 — <strong>The Beginning of Infinity: Explanations That Transform the World</strong> by David Deutsch</li>
                 <li>2023-03-21 — <strong>La Bête Integrale</strong> by David Goudreault</li>
                 <li>2023-03-17 — <strong>Fahrenheit 451</strong> by Ray Bradbury</li>
