@@ -4,27 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Ken's Website</title>
+    <link href="styles.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #F5F5F5;
-            color: #000000;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation - removed fixed nav */
-
         /* Main Content */
         main {
             padding: 3rem 2rem;
@@ -38,21 +19,14 @@
             margin-bottom: 1rem;
         }
 
-        .home-header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #000000;
-        }
-
         .home-header p {
-            font-size: 1.1rem;
+            font-size: var(--font-size-base);
             color: #333333;
             margin-bottom: 1rem;
         }
 
         .home-header a {
-            color: #000000;
+            color: var(--color-primary);
             text-decoration: none;
             transition: color 0.3s ease, text-decoration 0.3s ease;
         }
@@ -63,7 +37,7 @@
         }
 
         .home-header .subtitle {
-            font-size: 1.1rem;
+            font-size: var(--font-size-base);
             color: #333333;
             margin-bottom: 1rem;
         }
@@ -73,22 +47,15 @@
             margin-bottom: 1rem;
         }
 
-        .about-header h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #000000;
-        }
-
         .about-header p {
-            font-size: 1.1rem;
+            font-size: var(--font-size-base);
             color: #333333;
             margin-bottom: 1rem;
         }
 
         .about-content {
             color: #333333;
-            font-size: 1.1rem;
+            font-size: var(--font-size-base);
             line-height: 1.5;
             text-align: left;
         }
@@ -98,7 +65,7 @@
         }
 
         .about-content a {
-            color: #000000;
+            color: var(--color-primary);
             text-decoration: underline;
             text-decoration-color: #999999;
             text-underline-offset: 3px;
@@ -106,13 +73,13 @@
         }
 
         .about-content a:hover {
-            text-decoration-color: #000000;
+            text-decoration-color: var(--color-primary);
         }
 
         /* Header Separator */
         .header-separator {
             height: 1px;
-            background-color: #000000;
+            background-color: var(--color-primary);
             margin: 0.75rem 0 2rem 0;
             width: 100%;
         }
@@ -124,58 +91,6 @@
             margin: 1rem 0;
             width: 100%;
         }
-
-        /* Page Navigation Section */
-        .page-navigation {
-            margin-top: 1rem;
-            padding-top: 1rem;
-        }
-
-        .page-navigation ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-
-        .page-navigation a {
-            color: #666666;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .page-navigation a:hover {
-            color: #000000;
-        }
-
-        .page-navigation a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #000000;
-            transition: width 0.3s ease;
-        }
-
-        .page-navigation a:hover::after {
-            width: 100%;
-        }
-
-        .page-navigation a.active {
-            color: #000000;
-        }
-
-        .page-navigation a.active::after {
-            width: 100%;
-        }
-
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
@@ -208,8 +123,7 @@
 
         .home-header,
         .about-header,
-        .about-content,
-        .page-navigation {
+        .about-content {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
@@ -217,26 +131,18 @@
 <body>
     <main>
         <div class="home-header">
-            <p><a href="index.html">Ken Gatera</a></p>
+            <h5><a href="index.html">Ken Gatera</a></h5>
         </div>
         <div class="about-header">
             <h2>About</h2>
         </div>
         <div class="header-separator"></div>
         <div class="about-content"> 
+            <p>I'm fascinated by how things get built — not just physically, but organizationally. Over the past decade, following my curiosity has taken me through robotics, industrial automation, and construction management. Across each field, I've come to see projects as problems best solved by breaking them into measurable components, building feedback loops around each unit, and iterating until the whole system performs reliably.</p>
+            <p>Over time, I've become increasingly interested in the systems behind consistent performance — how projects, teams, and organizations are structured to deliver reliably across phases, constraints, and from planning through delivery.</p>
             <p>Leading complex construction projects taught me that success depends as much on coordination, incentives, and decision quality as it does on technical design. Working with clients, contractors, designers, and other professionals has shaped how I approach execution: clarity beats complexity, and well-designed systems outperform heroic effort under pressure.</p>
             <p>Since 2020, I have led high-end residential and commercial projects through execution and delivery, overseeing technical risk, stakeholder alignment and performance on both budget and schedule.</p>
-            <p>Today, I help teams design and run better execution systems — improving decision quality, reducing coordination friction, and increasing delivery predictability in complex environments.</p>
-        </div>
-
-        <div class="content-separator"></div>
-        
-        <div class="page-navigation">
-            <ul>
-                <li><a href="writing.html">Writing</a></li>
-                <li><a href="now.html">Now</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            
         </div>
     </main>
 </body>

@@ -1,0 +1,170 @@
+/*
+ * Shared styles for Ken's site — uniform typography and colours.
+ * Link this file in all pages: <link href="styles.css" rel="stylesheet">
+ */
+
+/* ========== Base variables (refer to these in page-specific CSS later) ========== */
+:root {
+  /* Primary colour */
+  --color-primary: #000000;
+
+  /* Accent (orange) for emphasis and link highlights */
+  --color-accent: #fa8112;
+
+  /* Heading and body font — most used on the site */
+  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  /* Base font size — most used on the site */
+  --font-size-base: 1.1rem;
+
+  /* Heading sizes */
+  --font-size-h1: clamp(2.5rem, 5vw, 4rem);
+  --font-size-h2: clamp(2.5rem, 5vw, 4rem);
+  --font-size-h3: 1.3rem;
+  --font-size-h4: 1.1rem; /* Smaller than h3; emphasis (caps + orange) without breaking hierarchy */
+}
+
+/* ========== Global base (optional — uncomment or keep in each page) ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #F5F5F5;
+}
+
+/* ========== Heading hierarchy (use these classes or elements site-wide) ========== */
+
+/* h1 — Main line to home page (e.g. "Ken Gatera") — from home-header h1 in index.html */
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+/* h2 — Page section title (e.g. "Now", "Writing") — from now-header h2 in now.html */
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+/* h3 — Sub-section of a page — from now-content h3 in now.html */
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+h3:first-of-type {
+  margin-top: 0;
+}
+
+/* h4 — Emphasis (all caps + orange) — based on now-header h2, then all caps + orange */
+h4 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+/* h5 — Clickable link style: default black, hover = underline + orange */
+h5,
+h5 a {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+h5 a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+}
+
+/* Header "Ken Gatera" link on non-index pages — black, orange on hover */
+.home-header h5 {
+  margin: 0 0 1rem 0;
+}
+
+.home-header h5 a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.home-header h5 a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+}
+
+/* h6 — Clickable link style: permanent underline + orange */
+h6,
+h6 a {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+h6 a:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+/* Inline link using h6 style (permanent underline + orange) */
+a.link-h6 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a.link-h6:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+/* Ensure link-h6 wins inside .now-content and .now-page-note (e.g. now.html) */
+.now-content a.link-h6,
+.now-page-note a.link-h6 {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+}
+
+.now-content a.link-h6:hover,
+.now-page-note a.link-h6:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
