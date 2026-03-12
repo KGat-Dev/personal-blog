@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Ken Gatera</title>
+    <link href="../../styles.css" rel="stylesheet">
+    <style>
+        /* Main Content */
+        main {
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .home-header {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .home-header p {
+            font-size: var(--font-size-base);
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .home-header a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .home-header a:hover {
+            color: #333333;
+            text-decoration: underline;
+        }
+
+        .article-header {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .article-header p {
+            font-size: var(--font-size-base);
+            color: #333333;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* Header Separator */
+        .header-separator {
+            height: 1px;
+            background-color: var(--color-primary);
+            margin: 0.75rem 0 2rem 0;
+            width: 100%;
+        }
+
+        /* Article content: structure for Python script to fill from md.
+           Fonts/sizes can be overridden by script-generated classes. */
+        .article-content {
+            color: #333333;
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1rem;
+        }
+
+        .article-content h2,
+        .article-content h3,
+        .article-content h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content a {
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-decoration-color: #999999;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.3s ease;
+        }
+
+        .article-content a:hover {
+            text-decoration-color: var(--color-primary);
+        }
+
+        /* Footer: Related links */
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .article-footer h3 {
+            margin-bottom: 1rem;
+        }
+
+        .article-footer ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-footer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-footer h5 {
+            margin: 0.25rem 0;
+        }
+
+        .article-footer-nav {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .article-footer-next {
+            margin-left: auto;
+        }
+
+        .article-footer-prev {
+            margin-right: auto;
+        }
+
+        .article-footer-links h5:first-child {
+            margin-top: 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .home-header,
+            .article-header {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .home-header,
+        .article-header,
+        .article-content,
+        .article-footer {
+            animation: fadeIn 0.6s ease-out;
+        }
+    
+        /* Font overrides from frontmatter */
+        .article-content { font-size: var(--font-size-base); }
+        .article-content h2 { font-size: var(--font-size-h2); }
+        .article-content h3 { font-size: var(--font-size-h3); }
+        .article-content h4 { font-size: var(--font-size-h4); }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="home-header">
+            <h5><a href="../../index.html">Ken Gatera</a></h5>
+        </div>
+
+        <div class="article-header">
+            <h2>The Construction PM Explained</h2>
+            <p>February 27, 2026</p>
+        </div>
+
+        <div class="header-separator"></div>
+
+        <div class="article-content">
+            <p>The tools and cycles described in this article gives a project manager the structure required to navigate your construction project and make good decisions.</p>
+            <p>During construction, positive and negative events occur every single day. A delay in material delivery or labor shortage, an unexpected site condition, a scope clarification from professionals; each one has the potential to ripple through your schedule, your budget, or both. </p>
+            <p>A great project manager strives to detect these events early, assess their impact, source solutions, and communicate clearly. </p>
+            <h4>The dynamic: Site Condition → Schedule → Budget</h4>
+            <p>Construction projects typically fall under the <strong><em>Waterfall</em></strong> model: the <strong>scope</strong> (what needs to be built) is defined upfront and held as fixed as possible. The <strong>schedule</strong> and <strong>budget</strong>, however, are variables. When things shift, there is often room to leverage one against the other.</p>
+            <p>This creates a useful mental model. When something goes wrong on site, your first questions should always be:</p>
+            <ul>
+                <li><em>Does this affect the schedule?</em></li>
+                <li><em>Does this affect the budget?</em></li>
+                <li><em>Does it affect both?</em></li>
+            </ul>
+            <p>A well-run project is delivered on time and on budget. An exceptional one comes in ahead of schedule and under budget. In practice, the latter is rare enough to be worth celebrating when it happens.</p>
+            <p>The tools below give you a clear, real-time picture of where your project stands against both variables. More importantly, they create the conditions to leverage either time or money when the situation calls for it.</p>
+            <hr />
+            <h4>The Three Loops (Cycles)</h4>
+            <p>The most effective way to use these tools is in structured cycles: <strong>daily</strong>, <strong>weekly</strong>, and <strong>monthly</strong>. Each cycle feeds into the next. Information captured daily informs weekly reviews; weekly changes are formalized and reflected in the monthly update.</p>
+            <hr />
+            <h3>Primary Loop — Daily</h3>
+            <p>This cycle's objecive is simple: staying close to the ground know what happened today before it becomes tomorrow's problem.</p>
+            <p><strong>1. Take a pulse of the site.</strong><br />
+            Walk the site. Talk to sub-trade foremen and specialists. Look for delays, safety concerns, logistical conflicts, and anything that doesn't match the plan. </p>
+            <p><strong>2. Identify the impact of any unexpected event.</strong><br />
+            If something out of the ordinary occurs, assess its cause, as well as the impact on schedule and cost.</p>
+            <p><strong>3. Source solutions.</strong><br />
+            Consult your team, review drawings, reach out to the professionals. A good PM does not always have the answer, but he knows who does and moves fast.</p>
+            <p><strong>4. Communicate urgent actions.</strong><br />
+            Flag anything time-sensitive to the appropriate party: the client, the architect, or the engineer. Delayed decisions tend to compound into bigger problems.</p>
+            <p><strong>5. Document and feed your tools.</strong><br />
+            Every observation, issue, and resolution goes into the system. The daily cycle has no value if the information it generates disappears.</p>
+            <p><strong>Primary tool:</strong> Change Order Management System</p>
+            <hr />
+            <h3>Secondary Loop — Weekly</h3>
+            <p>The weekly loop runs in parallel with ongoing approval processes. Its purpose is to monitor the status of open items and ensure nothing falls through the cracks.</p>
+            <p><strong>1. Manage your running list of change orders and RFIs.</strong><br />
+            Keep a live log. Know which items are open, who owns them, and how long they've been waiting. Duration matters, an unanswered RFI is a schedule risk.</p>
+            <p><strong>2. Monitor responses to RFIs and official directives.</strong><br />
+            Track responses from the client and professionals. Follow up proactively. Do not wait to be told.</p>
+            <p><strong>3. Monitor responses to RFQs and sub-trade requests.</strong><br />
+            Pricing requests sent to sub-trades need to come back in time to feed decisions. Know your deadlines and hold your team accountable to them.</p>
+            <p><strong>4. Communicate new information.</strong><br />
+            Share updates with responsible parties as they come in. The weekly cycle is a good forcing function to ensure nothing is being held up due to a missing piece of information.</p>
+            <p><strong>5. Confirm the week's schedule is on track.</strong><br />
+            This is closely tied to the daily cycle. The weekly review is where you assess <em>cumulative drift</em> and course-correct.</p>
+            <p><strong>Primary tools:</strong> Change Order Management System and P4S / P6S.</p>
+            <hr />
+            <h3>Third Loop — Monthly</h3>
+            <p>The monthly loop is where everything gets formally reconciled. Changes tracked weekly are reflected in the two master documents: the <strong>budget</strong> and the <strong>schedule</strong>.</p>
+            <p><strong>1. Formally address and document all open issues.</strong><br />
+            Solutions adopted during the daily and weekly cycles are recorded here. This is the official record of how the project evolved.</p>
+            <p><strong>2. Plan and secure resources for the next four weeks.</strong><br />
+            Use a look-ahead schedule (P4S or P6S) to confirm that labor, materials, and equipment required for the next month are lined up. </p>
+            <p><strong>3. Update billing and invoice treatment.</strong><br />
+            Ensure progress billings reflect work completed, invoices are processed, and your cash flow position is healthy. Cash flow is a major lifeline on a construction project. Manage it well and you will gain flexibility.</p>
+            <p><strong>Primary tools:</strong> Change Order Management System, master schedule and budget.</p>
+            <hr />
+            <h4>Key Tools</h4>
+            <p>Beyond the cycles themselves, the following tools are the instruments through which a PM maintains control. Mastering them is what separates a reactive PM from a proactive one.</p>
+            <h3>Master Budget</h3>
+            <p>The single source of truth for project costs. Tracks original contract value, approved change orders, pending changes, and forecast at completion. Updated monthly — or immediately when a significant change is approved.</p>
+            <h3>Master Schedule / P4S / P6S</h3>
+            <p>The master schedule shows the full project timeline from start to finish. The <strong>P4S (Plan for 4 Weeks)</strong> and <strong>P6S (Plan for 6 Weeks)</strong> are rolling look-ahead tools that zoom in on the near-term horizon. They are used to confirm resources are in place and sequences are achievable — before it's too late to adjust.</p>
+            <h3>Change Order &amp; PO Management</h3>
+            <p>A structured log of every change to the original scope, with its associated cost and schedule impact, approval status, and document trail. Without this, change orders pile up untracked and disputes become inevitable. With it, you have a clear, defensible record of how the project evolved.</p>
+            <h3>Invoice &amp; Payment Tracking</h3>
+            <p>Tracks all invoices issued and received, payment status, and holdbacks. Can be managed in a custom spreadsheet or proprietary software. The objective is simple: know exactly where you stand financially at all times, and ensure no invoice — yours or a sub-trade's — gets lost in the shuffle.</p>
+            <h3>Meeting Logs / Minutes &amp; Automated Distribution</h3>
+            <p>Every site meeting and coordination call should produce minutes. Minutes create accountability: decisions made in writing are irrefutable. Automate distribution so the right people receive the right minutes without manual effort.</p>
+            <h3>Email Management System (e.g., GTD)</h3>
+            <p>A high-volume construction project can generate hundreds of emails a week. Without a system, important items get buried. A method like <strong>Getting Things Done (GTD)</strong> — or any consistent inbox management approach — ensures that action items are captured, followed up, and closed, rather than lost.</p>
+            <hr />
+            <h4>Trust, But Verify</h4>
+            <p>This phrase came from a UPS director early in my career, and it has stuck. As a PM, your performance depends on the work of many parties — some internal, some external. Most are competent and well-intentioned. But accountability gaps exist, and it's your job to know where they are.</p>
+            <p>A few areas where this principle applies directly:</p>
+            <ul>
+                <li><strong>Accounting</strong> — <em>Don't rely solely on the accounting team to track payments. Maintain your own payment log and reconcile it regularly. Discrepancies are easier to resolve early than after the fact.</em></li>
+                <li><strong>Estimation</strong> — <em>Before closing a contract or approving a budget, review the drawings and scope yourself. A few hours of verification can prevent a costly surprise mid-project.</em></li>
+                <li><strong>Plan Coordination</strong> — <em>If past project post-mortems are available, review them. Recurring coordination issues — mechanical and structural conflicts, for example — tend to repeat across projects. Identifying them early, before construction begins, is far cheaper than resolving them in the field.</em></li>
+            </ul>
+            <hr />
+            <h4>Closing Thought</h4>
+            <p>The tools described above are a starting point, not a destination. Once they become habit, they fade into the background and free up your attention for what matters most: judgment. Knowing when to escalate and when to absorb, when to push back and when to accommodate, when a problem is manageable and when it's a genuine threat to the project.</p>
+            <p>That part can't be systematized. But it becomes a lot clearer when your tools are in order.</p>
+            <p><em>Part 2 of this series will go deeper into each tool — how to set them up, maintain them, and get the most out of them across the project lifecycle.</em></p>
+        </div>
+
+        <footer class="article-footer">
+            <div class="article-footer-nav">
+                <h5 class="article-footer-prev">
+                    <a href="real-estate-development-explained.html">← Previous</a>
+                </h5>
+
+                <div class="article-footer-links">
+                    <h5><a href="../../writing.html">Articles</a></h5>
+                </div>
+
+                <!--<h5 class="article-footer-next">
+                    <a href="#">Next →</a>
+                </h5>-->
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

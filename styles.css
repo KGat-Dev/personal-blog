@@ -16,7 +16,7 @@
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 
   /* Base font size — most used on the site */
-  --font-size-base: 1.1rem;
+  --font-size-base: 0.95rem;
 
   /* Heading sizes */
   --font-size-h1: clamp(2.5rem, 5vw, 4rem);

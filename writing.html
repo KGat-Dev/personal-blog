@@ -64,7 +64,7 @@
             margin-bottom: 1rem;
         }
 
-        .articles-list a {
+        .articles-list a:not(.link-h6) {
             color: var(--color-primary);
             text-decoration: none;
             font-size: var(--font-size-base);
@@ -72,7 +72,7 @@
             transition: color 0.3s ease, text-decoration 0.3s ease;
         }
 
-        .articles-list a:hover {
+        .articles-list a:not(.link-h6):hover {
             color: #333333;
             text-decoration: underline;
         }
@@ -160,7 +160,16 @@
         <div class="header-separator"></div>
 
         <div class="articles-list">
-            <p>Building</p>
+        <article class="article-preview">
+            <h3>Real Estate Development Explained</h3>
+            <p>A practical overview of the players and processes involved in real estate development. This is a living document, updated over time as my own understanding of the industry deepens.</p>
+            <p><a href="writing/posts/real-estate-development-explained.html" class="link-h6">read more →</a></p>
+        </article>
+        <article class="article-preview">
+            <h3>The Construction PM Explained</h3>
+            <p>The tools and cycles described in this article gives a project manager the structure required to navigate your construction project and make good decisions.</p>
+            <p><a href="writing/posts/construction-pm-explained.html" class="link-h6">read more →</a></p>
+        </article>
         </div>
     </main>
 </body>
