@@ -193,6 +193,83 @@
         .articles-list {
             animation: fadeIn 0.6s ease-out;
         }
+
+        /* Horizontal topic panels: one section visible at a time, swipe/scroll sideways */
+        .book-topics-carousel {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+            margin: 0;
+            /* Hide scrollbar; dots indicate position and allow jumps */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .book-topics-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .book-topics-track {
+            display: flex;
+            gap: 0;
+        }
+
+        .book-topic-panel {
+            flex: 0 0 100%;
+            min-width: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            box-sizing: border-box;
+        }
+
+        .book-topics-shell {
+            margin: 0 0 1rem 0;
+        }
+
+        .book-topics-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .book-topics-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 1px solid #bbbbbb;
+            background: #ffffff;
+            padding: 0;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .book-topics-dot:hover {
+            border-color: var(--color-primary);
+        }
+
+        .book-topics-dot:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .book-topics-dot[aria-current="true"] {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            transform: scale(1.15);
+        }
+
+        .book-topics-hint {
+            font-size: 0.85rem;
+            color: #666666;
+            margin: 0 0 0.75rem 0;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -214,57 +291,99 @@
             
         <div class="header-separator"></div>
 
-        <div class="articles-list">
-            <h3>Authors that have influenced my thinking:</h3>
-            <ul>
-                <li>Nassim Nicholas Taleb for his approach to risk and uncertainty</li>
-                <li>Ayn Rand for her boldness in promoting objectivism</li>
-                <li>Derek Sivers for his aphorisms and minimalist approach to life</li>
-                <li>Ted Chiang's short stories for a unique blend of science fiction and philosophy</li>
-            </ul>
-        </div>
-
-        <div class="header-separator"></div>
-
-        <div class="articles-list">
-            <h3>Honorable mentions of the genres above include:</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Human Nature</th>
-                        <th>Decision making</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            As a Man Thinketh by James Allen<br>
-                            On The Shortness of Life by Seneca<br>
-                            Flowers for Algernon by Daniel Keyes<br>
-                            Stranger in a Strange Land by Robert A. Heinlein
-                        </td>
-                        <td>
-                            Blue Ocean Strategy by W. Chan Kim & Renée M.<br>
-                            How Adam Smith Can Change Your Life by Bryan C.<br>
-                            Thinking in systems by Donella Meadows<br>
-                            Tools of Titans by Tim Ferriss
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="header-separator"></div>
-
-        <div class="articles-list">
-            <h3>Architecture & Construction related books:</h3>
-            <ul>
-                <li>How Buildings Learn by Stewart Brand</li>
-                <li>A place of my own by Michael Pollan</li>
-                <li>The architecture of happiness by Alain de Botton</li>
-            </ul>
+        <p class="book-topics-hint" id="book-topics-hint">Explore favorite topics</p>
+        <div class="book-topics-shell">
+            <div class="book-topics-carousel" role="region" aria-roledescription="carousel" aria-labelledby="book-topics-hint" tabindex="0">
+                <div class="book-topics-track">
+                    <div class="book-topic-panel articles-list" id="book-topic-panel-0" aria-labelledby="book-topic-dot-0">
+                        <h3>Authors that have influenced my thinking</h3>
+                        <ul>
+                            <li>Nassim Nicholas Taleb for his approach to risk and uncertainty</li>
+                            <li>Ayn Rand for her boldness in promoting objectivism</li>
+                            <li>Derek Sivers for his aphorisms and minimalist approach to life</li>
+                            <li>Ted Chiang's short stories for a unique blend of science fiction and philosophy</li>
+                        </ul>
+                    </div>
+                    <div class="book-topic-panel articles-list" id="book-topic-panel-1" aria-labelledby="book-topic-dot-1">
+                        <h3>Human Nature related books</h3>
+                        <ul>
+                            <li>As a Man Thinketh by James Allen</li>
+                            <li>On The Shortness of Life by Seneca</li>
+                            <li>Flowers for Algernon by Daniel Keyes</li>
+                            <li>Stranger in a Strange Land by Robert A. Heinlein</li>
+                        </ul>
+                    </div>
+                    <div class="book-topic-panel articles-list" id="book-topic-panel-2" aria-labelledby="book-topic-dot-2">
+                        <h3>Decision making related books</h3>
+                        <ul>
+                            <li>Blue Ocean Strategy by W. Chan Kim & Renée M.</li>
+                            <li>How Adam Smith Can Change Your Life by Bryan C.</li>
+                            <li>Thinking in systems by Donella Meadows</li>
+                            <li>Tools of Titans by Tim Ferriss</li>
+                        </ul>
+                    </div>
+                    <div class="book-topic-panel articles-list" id="book-topic-panel-3" aria-labelledby="book-topic-dot-3">
+                        <h3>Architecture & Construction related books</h3>
+                        <ul>
+                            <li>How Buildings Learn by Stewart Brand</li>
+                            <li>A place of my own by Michael Pollan</li>
+                            <li>The architecture of happiness by Alain de Botton</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="book-topics-dots" role="group" aria-label="Book topic slides">
+                <button type="button" class="book-topics-dot" id="book-topic-dot-0" aria-controls="book-topic-panel-0" aria-label="Authors" aria-current="true"></button>
+                <button type="button" class="book-topics-dot" id="book-topic-dot-1" aria-controls="book-topic-panel-1" aria-label="Human Nature"></button>
+                <button type="button" class="book-topics-dot" id="book-topic-dot-2" aria-controls="book-topic-panel-2" aria-label="Decision making"></button>
+                <button type="button" class="book-topics-dot" id="book-topic-dot-3" aria-controls="book-topic-panel-3" aria-label="Architecture and Construction"></button>
+            </div>
         </div>
     </main>
+    <script>
+        (function () {
+            var shell = document.querySelector('.book-topics-shell');
+            if (!shell) return;
+            var carousel = shell.querySelector('.book-topics-carousel');
+            var panels = shell.querySelectorAll('.book-topic-panel');
+            var dots = shell.querySelectorAll('.book-topics-dot');
+
+            function activeIndex() {
+                var w = carousel.clientWidth;
+                if (!w) return 0;
+                return Math.max(0, Math.min(panels.length - 1, Math.round(carousel.scrollLeft / w)));
+            }
+
+            function setDots(index) {
+                dots.forEach(function (d, i) {
+                    d.setAttribute('aria-current', i === index ? 'true' : 'false');
+                });
+            }
+
+            dots.forEach(function (dot, i) {
+                dot.addEventListener('click', function () {
+                    carousel.scrollTo({ left: i * carousel.clientWidth, behavior: 'smooth' });
+                    setDots(i);
+                });
+            });
+
+            var scrollTicking = false;
+            carousel.addEventListener('scroll', function () {
+                if (scrollTicking) return;
+                scrollTicking = true;
+                requestAnimationFrame(function () {
+                    setDots(activeIndex());
+                    scrollTicking = false;
+                });
+            }, { passive: true });
+
+            window.addEventListener('resize', function () {
+                setDots(activeIndex());
+            });
+
+            setDots(activeIndex());
+        })();
+    </script>
 </body>
 </html>
 
