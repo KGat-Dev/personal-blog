@@ -3,148 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ken Gatera — Project Manager & Tinkerer</title>
+    <title>Ken Gatera — Deliberate Generalist</title>
 
     <!-- Basic SEO -->
-    <meta name="description" content="Ken shares personal experiments, frameworks, as well as readings that shape his thinking.">
+    <meta name="description" content="Ken Gatera — a deliberate generalist. Record of experiments on building, writing, and systems behind consistent performance.">
     <meta name="author" content="Ken Gatera">
 
     <!-- Minimal social sharing tags -->
-    <meta property="og:title" content="Ken Gatera">
-    <meta property="og:description" content="Deliberate Generalist.">
+    <meta property="og:title" content="Ken Gatera — Deliberate Generalist">
+    <meta property="og:description" content="A record of experiments on building, writing, and systems behind consistent performance.">
     <meta property="og:type" content="website">
 
     <link href="styles.css" rel="stylesheet">
-    <style>
-        /* Main Content */
-        main {
-            padding: 3rem 2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .home-header {
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-
-        .home-tagline {
-            font-size: var(--font-size-base);
-            color: #333333;
-            margin-bottom: 0.75rem;
-        }
-
-        .home-stats {
-            font-size: 0.95rem;
-            color: #555555;
-            margin-bottom: 1.5rem;
-        }
-
-        .contents {
-            margin-top: 2.5rem;
-        }
-
-        .contents-row {
-            margin-bottom: 1.25rem;
-        }
-
-        .contents-row .item {
-            margin: 0 0 0.25rem 0;
-        }
-
-        .contents-row .desc {
-            color: #333333;
-            font-size: var(--font-size-base);
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .home-writing-list {
-            margin: 0.75rem 0 0 0;
-            padding-left: 1.25rem;
-            color: #333333;
-            font-size: var(--font-size-base);
-            line-height: 1.6;
-        }
-
-        .home-writing-list li {
-            margin-bottom: 0.35rem;
-        }
-
-        .home-writing-list h5 {
-            margin: 0;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            main {
-                padding: 2rem 1.5rem;
-            }
-
-            .home-header {
-                margin-bottom: 1.75rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            main {
-                padding: 1.5rem 1.25rem;
-            }
-        }
-
-        /* Smooth fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .home-header {
-            animation: fadeIn 0.6s ease-out;
-        }
-    </style>
 </head>
-<body>
-    <main>
-        <div class="home-header">
-            <h1><strong>Ken Gatera</strong></h1>
-            <p class="home-tagline">Deliberate Generalist.</p>
-            <p class="home-stats">A public record of experiments on building and writing.</p>
+<body id="top">
+    <nav class="site-nav" aria-label="Primary">
+        <div class="site-nav-inner">
+            <a href="#top" class="site-nav-brand">Ken Gatera</a>
+            <ul class="site-nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#writing">Writing</a></li>
+                <li><a href="#exploring">Exploring</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="contents">
-            <div class="contents-row">
-                <h3 class="item">Writing</h3>
-                <p class="desc">A collection of <a href="writing.html" class="link-h6">notes & articles</a>. The first articles examine real estate development, a domain that demands operational rigor, careful financial planning and human collaboration.</p>
-                <ul class="home-writing-list">
-                    <li><h5><a href="writing/real-estate-development-explained.html">Real Estate Development Explained</a></h5></li>
-                    <li><h5><a href="writing/construction-pm-explained.html">The Construction PM Explained</a></h5></li>
-                </ul>
-            </div>
+    <main class="home-main">
+        <header class="home-header">
+            <h1 class="visually-hidden">Ken Gatera — Deliberate Generalist</h1>
+            <span class="home-eyebrow" aria-hidden="true">Deliberate Generalist</span>
+            <p class="home-stats">A record of experiments on building and writing.</p>
+        </header>
 
-            <div class="contents-row">
-                <h3 class="item">Exploring</h3>
-                <p class="desc">If you enjoy reading, this <a href="book-page.html" class="link-h6">section</a> features authors and genres that have shaped my thinking.</p>
-                <p class="desc">Lastly, current projects will be shared on this <a href="now.html" class="link-h6">Now page</a>.</p>
+        <section class="home-section" id="about">
+            <div class="home-section-label">About</div>
+            <div class="about-content">
+                <p>I'm fascinated by how things get built. Over the past decade, following my curiosity has taken me through robotics, industrial automation, and construction management.</p>
+                <p>Since 2020, I have led complex high-end residential and commercial projects through execution and delivery. My approach towards execution is simple: clarity beats complexity, and well-designed systems outperform heroic effort under pressure.</p>
+                <p>Over time, I'm becoming increasingly interested in the systems behind consistent performance and how new technologies can be leveraged to optimize workflows and free-up time for high-value strategic work.</p>
             </div>
+        </section>
 
-            <div class="contents-row">
-                <p class="desc">To contact me <a href="contact.html" class="link-h6">send me an email</a>.</p>
+        <section class="home-section" id="projects">
+            <div class="home-section-label">Projects</div>
+            <p class="home-section-desc">Personal experiments and tools at the intersection of construction, writing, and AI.</p>
+            <div class="project-grid">
+                <a class="project-card" href="https://bygatera.com" target="_blank" rel="noopener noreferrer">
+                    <h4>bygatera.com</h4>
+                    <p>A growing library of construction lessons — real mistakes, fixes, and fundamentals drawn from condo builds and high-end renovations, written down so the next team doesn't have to learn them the expensive way.</p>
+                    <span class="project-link">Visit site →</span>
+                </a>
+                <div class="project-card project-card--placeholder" aria-disabled="true">
+                    <h4>More coming soon</h4>
+                    <p>In the works. Placeholder for the next project.</p>
+                    <span class="project-link">Stay tuned</span>
+                </div>
             </div>
-<!--COMING SOON
-            <div class="contents-row">
-                <h3 class="item">Projects</h3>
-                <p class="desc">Tools and personal experiments. Coming soon.</p>
-            </div>
-            -->
-        </div>
+        </section>
 
+        <section class="home-section" id="writing">
+            <div class="home-section-label">Writing</div>
+            <p class="home-section-desc">A collection of <a href="writing.html" class="link-h6">notes &amp; articles</a>. The first articles examine real estate development, a domain that demands operational rigor, careful financial planning and human collaboration.</p>
+            <div class="project-grid">
+                <a class="project-card" href="writing/real-estate-development-explained.html">
+                    <h4>Real Estate Development Explained</h4>
+                    <p>A practical overview of the players and processes involved in real estate development — a living document, updated as my own understanding of the industry deepens.</p>
+                    <span class="project-link">Read more →</span>
+                </a>
+                <a class="project-card" href="writing/construction-pm-explained.html">
+                    <h4>The Construction PM Explained</h4>
+                    <p>The tools and cycles that give a project manager the structure required to navigate a construction project and make good decisions.</p>
+                    <span class="project-link">Read more →</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="home-section" id="exploring">
+            <div class="home-section-label">Exploring</div>
+            <p class="home-section-desc">If you enjoy reading, this <a href="book-page.html" class="link-h6">section</a> features authors and genres that have shaped my thinking.</p>
+        </section>
+
+        <section class="home-section" id="contact">
+            <div class="home-section-label">Contact</div>
+            <p class="home-section-desc">Get in touch. To contact me <a href="contact.html" class="link-h6">send me an email</a>.</p>
+        </section>
     </main>
 </body>
 </html>
