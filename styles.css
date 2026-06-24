@@ -446,3 +446,130 @@ a.link-h6:hover {
     padding: 0.75rem 1.25rem 1.75rem;
   }
 }
+
+/* ========== Article pages (writing/*.html) ========== */
+.article-page {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-header {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.article-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  line-height: 1.25;
+}
+
+.article-lede {
+  font-size: var(--font-size-base);
+  color: #333333;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.header-separator {
+  height: 1px;
+  background-color: var(--color-primary);
+  margin: 0.75rem 0 2rem 0;
+  width: 100%;
+}
+
+.article-body {
+  color: #333333;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+}
+
+.article-body p {
+  margin-bottom: 1rem;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+.article-body h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-body h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: none;
+  margin-top: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.article-body ul {
+  margin: 0 0 1rem 1.25rem;
+}
+
+.article-body li {
+  margin-bottom: 0.35rem;
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 2rem 0;
+}
+
+.article-body em {
+  font-style: italic;
+}
+
+.article-body strong {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.article-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.article-body a:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+.article-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.article-back {
+  margin-top: 2.5rem;
+}
+
+.article-page .home-header,
+.article-page .article-header,
+.article-page .article-body {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .article-page {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-page {
+    padding: 1.5rem 1.25rem;
+  }
+}
