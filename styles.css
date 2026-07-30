@@ -5,11 +5,11 @@
 
 /* ========== Base variables (refer to these in page-specific CSS later) ========== */
 :root {
-  /* Primary colour */
-  --color-primary: #000000;
-
-  /* Accent (orange) for emphasis and link highlights */
+  /* Colors */
+  --color-primary: #46494d;
   --color-accent: #fa8112;
+  --bg: #F5F5F5;
+  
 
   /* Heading and body font — most used on the site */
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -19,7 +19,7 @@
   --font-size-base: 0.95rem;
 
   /* Heading sizes */
-  --font-size-h1: clamp(2.5rem, 5vw, 4rem);
+  --font-size-h1: clamp(2.5rem, 5vw, 6rem);
   --font-size-h2: clamp(2.5rem, 5vw, 4rem);
   --font-size-h3: 1.3rem;
   --font-size-h4: 1.1rem; /* Smaller than h3; emphasis (caps + orange) without breaking hierarchy */
@@ -259,6 +259,38 @@ a.link-h6:hover {
   animation: fadeIn 0.6s ease-out;
 }
 
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  gap: 1rem;
+  margin: 1.5rem 1.5rem 2.25rem;
+}
+
+.hero-section .home-header {
+  margin: 0;
+  animation: none;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2.5rem;
+  }
+}
+
+
+.home-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 650;
+  color: #555555;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
 .home-eyebrow {
   display: inline-block;
   font-family: var(--font-heading);
@@ -274,6 +306,29 @@ a.link-h6:hover {
   font-size: 0.9rem;
   color: #555555;
   margin-bottom: 0;
+}
+
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.credentials span {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #555555;
+}
+
+.credentials span + span::before {
+  content: "·";
+  margin-right: 0.65rem;
+  color: var(--color-accent);
+  font-weight: 700;
 }
 
 /* Section block (one per content area) */
@@ -428,6 +483,9 @@ a.link-h6:hover {
     padding: 1rem 1.5rem 2rem;
   }
   .home-header {
+    margin: 1rem 0 1.75rem;
+  }
+  .hero-section {
     margin: 1rem 0 1.75rem;
   }
 }
