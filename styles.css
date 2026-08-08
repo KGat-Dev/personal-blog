@@ -6,23 +6,26 @@
 /* ========== Base variables (refer to these in page-specific CSS later) ========== */
 :root {
   /* Colors */
-  --color-primary: #46494d;
-  --color-accent: #fa8112;
-  --bg: #F5F5F5;
-  
+  --color-primary: #1a1d21;
+  --color-body: #46494d;
+  --color-muted: #8a8d91;
+  --color-rule: #e6e6e4;
+  --color-accent: #0057b3;
+  --bg: #ffffff;
+
 
   /* Heading and body font — most used on the site */
-  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 
   /* Base font size — most used on the site */
   --font-size-base: 0.95rem;
 
   /* Heading sizes */
-  --font-size-h1: clamp(2.5rem, 5vw, 6rem);
+  --font-size-h1: clamp(2rem, 6vw, 2.9rem);
   --font-size-h2: clamp(2.5rem, 5vw, 4rem);
   --font-size-h3: 1.3rem;
-  --font-size-h4: 1.1rem; /* Smaller than h3; emphasis (caps + orange) without breaking hierarchy */
+  --font-size-h4: 1.1rem; /* Smaller than h3; emphasis (caps + accent) without breaking hierarchy */
 }
 
 /* ========== Global base (optional — uncomment or keep in each page) ========== */
@@ -39,24 +42,26 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
-  color: var(--color-primary);
+  color: var(--color-body);
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: #F5F5F5;
+  background-color: var(--bg);
 }
 
 /* ========== Heading hierarchy (use these classes or elements site-wide) ========== */
 
-/* h1 — Main line to home page (e.g. "Ken Gatera") — from home-header h1 in index.html */
+/* h1 — Main page heading (e.g. hero title on index.html) */
 h1 {
   font-family: var(--font-heading);
   font-size: var(--font-size-h1);
-  font-weight: 700;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   margin-bottom: 1rem;
   color: var(--color-primary);
 }
 
-/* h2 — Page section title (e.g. "Now", "Writing") — from now-header h2 in now.html */
+/* h2 — Page section title (e.g. "Writing", "Get In Touch") */
 h2 {
   font-family: var(--font-heading);
   font-size: var(--font-size-h2);
@@ -65,7 +70,7 @@ h2 {
   color: var(--color-primary);
 }
 
-/* h3 — Sub-section of a page — from now-content h3 in now.html */
+/* h3 — Sub-section of a page (e.g. article body headings) */
 h3 {
   font-family: var(--font-heading);
   font-size: var(--font-size-h3);
@@ -79,7 +84,7 @@ h3:first-of-type {
   margin-top: 0;
 }
 
-/* h4 — Emphasis (all caps + orange) — based on now-header h2, then all caps + orange */
+/* h4 — Emphasis (all caps + accent) — based on now-header h2, then all caps + accent */
 h4 {
   font-family: var(--font-heading);
   font-size: var(--font-size-h4);
@@ -155,37 +160,10 @@ a.link-h6:hover {
   text-decoration-color: var(--color-primary);
 }
 
-/* Ensure link-h6 wins inside .now-content and .now-page-note (e.g. now.html) */
-.now-content a.link-h6,
-.now-page-note a.link-h6 {
-  color: var(--color-accent);
-  text-decoration: underline;
-  text-decoration-color: var(--color-accent);
-}
-
-.now-content a.link-h6:hover,
-.now-page-note a.link-h6:hover {
-  color: var(--color-primary);
-  text-decoration-color: var(--color-primary);
-}
-
-/* Visually hidden — accessible to screen readers, removed from visual flow */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 /* ========== Site header / navigation (index.html) — not fixed, scrolls with page ========== */
 .site-nav {
   background: transparent;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--color-rule);
 }
 
 .site-nav-inner {
@@ -231,17 +209,13 @@ a.link-h6:hover {
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 500;
-  color: #333333;
+  color: var(--color-muted);
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap;
 }
 
 .site-nav-links a:hover {
-  color: var(--color-accent);
-}
-
-.site-nav-links a[aria-current="page"] {
   color: var(--color-accent);
 }
 
@@ -262,81 +236,18 @@ a.link-h6:hover {
 .hero-section {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
   text-align: left;
   gap: 1rem;
-  margin: 1.5rem 1.5rem 2.25rem;
-  margin-bottom: 0.55rem;
-}
-
-.hero-section .home-header {
-  margin: 0;
-  animation: none;
-}
-
-@media (min-width: 768px) {
-  .hero-section {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 2.5rem;
-  }
-}
-
-
-.home-header h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
-  font-weight: 650;
-  color: #555555;
-  line-height: 1.2;
-  margin-bottom: 0.85rem;
-}
-
-.home-eyebrow {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.6rem;
-}
-
-.home-stats {
-  font-size: 0.9rem;
-  color: #555555;
-  margin-bottom: 0;
-}
-
-.credentials {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.65rem;
-  margin-top: 1.25rem;
-}
-
-.credentials span {
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #555555;
-}
-
-.credentials span + span::before {
-  content: "·";
-  margin-right: 0.65rem;
-  color: var(--color-accent);
-  font-weight: 700;
+  width: 50%; /* Limits the line length */
+  margin: 1.5rem 0 2.25rem;
 }
 
 /* Section block (one per content area) */
 .home-section {
   scroll-margin-top: 80px;
   padding: 1.75rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--color-rule);
 }
 
 .home-section:first-of-type {
@@ -350,22 +261,12 @@ a.link-h6:hover {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-muted);
   margin-bottom: 0.55rem;
 }
 
-/* h2 used as a sub-section title inside .home-section — keep it compact */
-.home-section-title {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0 0 0.6rem 0;
-  color: var(--color-primary);
-  line-height: 1.25;
-}
-
 .home-section-desc {
-  color: #333333;
+  color: var(--color-body);
   font-size: var(--font-size-base);
   line-height: 1.65;
   margin: 0 0 0.5rem 0;
@@ -377,7 +278,7 @@ a.link-h6:hover {
 
 /* About content */
 .about-content {
-  color: #333333;
+  color: var(--color-body);
   font-size: var(--font-size-base);
   line-height: 1.7;
 }
@@ -407,9 +308,9 @@ a.link-h6:hover {
 .project-card {
   display: block;
   padding: 1.1rem 1.2rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-rule);
   border-radius: 10px;
-  background: #ffffff;
+  background: var(--bg);
   text-decoration: none;
   color: var(--color-primary);
   transition: border-color 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
@@ -418,23 +319,6 @@ a.link-h6:hover {
 .project-card:hover {
   border-color: var(--color-accent);
   transform: translateY(-2px);
-}
-
-/* Placeholder card — no link, dashed border, muted */
-.project-card--placeholder {
-  border-style: dashed;
-  background: transparent;
-  cursor: default;
-  opacity: 0.85;
-}
-
-.project-card--placeholder:hover {
-  border-color: rgba(0, 0, 0, 0.18);
-  transform: none;
-}
-
-.project-card--placeholder .project-link {
-  color: #888888;
 }
 
 /* Override global h4 (uppercase + orange) inside project cards */
@@ -449,7 +333,7 @@ a.link-h6:hover {
 
 .project-card p {
   font-size: 0.9rem;
-  color: #555555;
+  color: var(--color-body);
   line-height: 1.55;
   margin: 0;
 }
@@ -487,6 +371,7 @@ a.link-h6:hover {
     margin: 1rem 0 1.75rem;
   }
   .hero-section {
+    width: 100%;
     margin: 1rem 0 1.75rem;
   }
 }
@@ -530,20 +415,20 @@ a.link-h6:hover {
 
 .article-lede {
   font-size: var(--font-size-base);
-  color: #333333;
+  color: var(--color-body);
   font-style: italic;
   margin-bottom: 0;
 }
 
 .header-separator {
   height: 1px;
-  background-color: var(--color-primary);
+  background-color: var(--color-rule);
   margin: 0.75rem 0 2rem 0;
   width: 100%;
 }
 
 .article-body {
-  color: #333333;
+  color: var(--color-body);
   font-size: var(--font-size-base);
   line-height: 1.7;
 }
@@ -580,7 +465,7 @@ a.link-h6:hover {
 
 .article-body hr {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--color-rule);
   margin: 2rem 0;
 }
 
@@ -608,7 +493,7 @@ a.link-h6:hover {
 .article-footer {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--color-rule);
 }
 
 .article-back {

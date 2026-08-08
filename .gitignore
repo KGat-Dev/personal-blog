@@ -20,6 +20,7 @@ $RECYCLE.BIN/
 # Editors / IDEs
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 *.sublime-project
@@ -54,3 +55,4 @@ out/
 *.tmp
 *.bak
 now.html
+Template-site-writing.html
