@@ -391,6 +391,24 @@ a.link-h6:hover {
   }
 }
 
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 2.25rem 0 3rem;
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+footer p, footer a {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+footer a:hover { color: var(--color-accent); }
+
 /* ========== Article pages (writing/*.html) ========== */
 .article-page {
   padding: 3rem 2rem;
