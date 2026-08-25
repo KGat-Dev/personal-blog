@@ -15,28 +15,6 @@
             margin-right: auto;
         }
 
-        .home-header {
-            text-align: left;
-            margin-bottom: 1rem;
-        }
-
-        .home-header p {
-            font-size: var(--font-size-base);
-            color: #333333;
-            margin-bottom: 1rem;
-        }
-
-        .home-header a {
-            color: var(--color-primary);
-            text-decoration: none;
-            transition: color 0.3s ease, text-decoration 0.3s ease;
-        }
-
-        .home-header a:hover {
-            color: #333333;
-            text-decoration: underline;
-        }
-
         .blog-header {
             text-align: left;
             margin-bottom: 1rem;
@@ -180,7 +158,6 @@
             }
         }
 
-        .home-header,
         .articles-list {
             animation: fadeIn 0.6s ease-out;
         }
@@ -264,10 +241,17 @@
     </style>
 </head>
 <body>
-    <main>
-        <div class="home-header">
-            <h5><a href="index.html">Ken Gatera</a></h5>
+    <nav class="site-nav" aria-label="Primary">
+        <div class="site-nav-inner">
+            <a href="index.html" class="site-nav-brand">Ken Gatera</a>
+            <ul class="site-nav-links">
+                <li><a href="index.html#writing">Writing</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <main>
         <div class="blog-header">
             <h2>Perspective Hub</h2>
             <p>The books, authors, and ideas that shape my work and worldview.</p>

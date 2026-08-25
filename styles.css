@@ -169,15 +169,15 @@ a.link-h6:hover {
 .site-nav-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1.75rem 2rem 1.25rem;
+  padding: 1.5rem 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
-  gap: 0.9rem;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-/* Part 1 — brand name in bold */
+/* Part 1 — brand name in bold, far left */
 .site-nav-brand {
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 2.2vw, 1.75rem);
@@ -192,7 +192,7 @@ a.link-h6:hover {
   color: var(--color-accent);
 }
 
-/* Part 2 — nav items on a single line below the brand */
+/* Part 2 — nav items on the same line, far right */
 .site-nav-links {
   list-style: none;
   display: flex;
@@ -238,9 +238,21 @@ a.link-h6:hover {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 1rem;
-  width: 50%; /* Limits the line length */
+  gap: 1.25rem;
   margin: 1.5rem 0 2.25rem;
+}
+
+.hero-section p {
+  max-width: 38ch; /* Limits the line length */
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-body);
+}
+
+.hero-section span {
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 /* Section block (one per content area) */
@@ -255,25 +267,35 @@ a.link-h6:hover {
   padding-top: 0.5rem;
 }
 
+.home-section-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
 .home-section-label {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: var(--font-size-base);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-muted);
-  margin-bottom: 0.55rem;
+  color: var(--color-primary);
 }
 
 .home-section-desc {
   color: var(--color-body);
   font-size: var(--font-size-base);
+  font-weight: 400;
   line-height: 1.65;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
 }
 
-.home-section-desc:last-child {
-  margin-bottom: 0;
+.home-section-desc::before {
+  content: "-";
+  margin-right: 0.5rem;
+  color: var(--color-muted);
 }
 
 /* About content */
@@ -291,59 +313,74 @@ a.link-h6:hover {
   margin-bottom: 0;
 }
 
-/* Projects grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+/* Writing table — year + title, à la rauchg.com */
+.writing-table {
+  width: 100%;
+  margin-top: 0.75rem;
+  border-collapse: collapse;
+}
+
+.writing-table td {
+  padding: 0.5rem 0;
+  vertical-align: baseline;
+}
+
+.writing-table td.writing-year {
+  width: 4ch;
+  padding-right: 1.5rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-base);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.writing-title a {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.writing-title a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+}
+
+/* Projects list */
+.project-list {
   margin-top: 0.75rem;
 }
 
-@media (min-width: 720px) {
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.project-card {
+.project-item {
   display: block;
-  padding: 1.1rem 1.2rem;
-  border: 1px solid var(--color-rule);
-  border-radius: 10px;
-  background: var(--bg);
+  padding: 1rem 0;
   text-decoration: none;
-  color: var(--color-primary);
-  transition: border-color 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
 }
 
-.project-card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-/* Override global h4 (uppercase + orange) inside project cards */
-.project-card h4 {
+/* Override global h4 (uppercase + orange) inside project items */
+.project-item h4 {
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-transform: none;
   margin: 0 0 0.35rem 0;
+  transition: color 0.2s ease;
 }
 
-.project-card p {
+.project-item:hover h4 {
+  color: var(--color-primary);
+}
+
+.project-item p {
   font-size: 0.9rem;
   color: var(--color-body);
   line-height: 1.55;
   margin: 0;
-}
-
-.project-card .project-link {
-  display: inline-block;
-  margin-top: 0.7rem;
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  font-weight: 600;
 }
 
 /* Fade-in animation (used on home-header) */
@@ -355,7 +392,7 @@ a.link-h6:hover {
 /* Responsive */
 @media (max-width: 768px) {
   .site-nav-inner {
-    padding: 1.25rem 1.5rem 1rem;
+    padding: 1.25rem 1.5rem;
     gap: 0.7rem;
   }
   .site-nav-links {
@@ -371,14 +408,13 @@ a.link-h6:hover {
     margin: 1rem 0 1.75rem;
   }
   .hero-section {
-    width: 100%;
     margin: 1rem 0 1.75rem;
   }
 }
 
 @media (max-width: 480px) {
   .site-nav-inner {
-    padding: 1rem 1.25rem 0.85rem;
+    padding: 1rem 1.25rem;
   }
   .site-nav-links {
     gap: 0.65rem;
@@ -429,6 +465,13 @@ footer a:hover { color: var(--color-accent); }
   margin-bottom: 0.5rem;
   color: var(--color-primary);
   line-height: 1.25;
+}
+
+.article-date {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.5rem;
 }
 
 .article-lede {
@@ -518,7 +561,6 @@ footer a:hover { color: var(--color-accent); }
   margin-top: 2.5rem;
 }
 
-.article-page .home-header,
 .article-page .article-header,
 .article-page .article-body {
   animation: fadeIn 0.6s ease-out;
