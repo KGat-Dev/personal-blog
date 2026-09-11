@@ -326,6 +326,18 @@ a.link-h6:hover {
   text-decoration-color: var(--color-primary);
 }
 
+/* Muted link — underlined for affordance, but stays gray (no accent color) */
+.about-content a.muted-link {
+  color: var(--color-body);
+  text-decoration: underline;
+  text-decoration-color: var(--color-body);
+}
+
+.about-content a.muted-link:hover {
+  color: var(--color-body);
+  text-decoration-color: var(--color-body);
+}
+
 /* Writing table — year + title, à la rauchg.com */
 .writing-table {
   width: 100%;
