@@ -22,10 +22,13 @@
   --font-size-base: 0.95rem;
 
   /* Heading sizes */
-  --font-size-h1: clamp(2rem, 6vw, 2.9rem);
+  --font-size-h1: clamp(1.75rem, 5vw, 2.35rem);
   --font-size-h2: clamp(2.5rem, 5vw, 4rem);
   --font-size-h3: 1.3rem;
   --font-size-h4: 1.1rem; /* Smaller than h3; emphasis (caps + accent) without breaking hierarchy */
+
+  /* Layout — single source of truth so every page's content column stays capped, regardless of screen size */
+  --content-max-width: 900px;
 }
 
 /* ========== Global base (optional — uncomment or keep in each page) ========== */
@@ -163,11 +166,10 @@ a.link-h6:hover {
 /* ========== Site header / navigation (index.html) — not fixed, scrolls with page ========== */
 .site-nav {
   background: transparent;
-  border-bottom: 1px solid var(--color-rule);
 }
 
 .site-nav-inner {
-  max-width: 900px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 1.5rem 2rem;
   display: flex;
@@ -180,8 +182,8 @@ a.link-h6:hover {
 /* Part 1 — brand name in bold, far left */
 .site-nav-brand {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
   letter-spacing: -0.01em;
@@ -207,8 +209,8 @@ a.link-h6:hover {
 .site-nav-links a {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--color-muted);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -222,7 +224,7 @@ a.link-h6:hover {
 /* ========== Home page (index.html) layout ========== */
 .home-main {
   padding: 1.5rem 2rem 3rem;
-  max-width: 900px;
+  max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -244,7 +246,7 @@ a.link-h6:hover {
 
 .hero-section p {
   max-width: 38ch; /* Limits the line length */
-  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
   font-weight: 500;
   line-height: 1.45;
   color: var(--color-body);
@@ -310,6 +312,18 @@ a.link-h6:hover {
 
 .about-content p:last-child {
   margin-bottom: 0;
+}
+
+.about-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.about-content a:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
 }
 
 /* Writing table — year + title, à la rauchg.com */
@@ -397,9 +411,6 @@ a.link-h6:hover {
   .site-nav-links {
     gap: 0.9rem;
   }
-  .site-nav-links a {
-    font-size: 0.8rem;
-  }
   .home-main {
     padding: 1rem 1.5rem 2rem;
   }
@@ -418,17 +429,15 @@ a.link-h6:hover {
   .site-nav-links {
     gap: 0.65rem;
   }
-  .site-nav-links a {
-    font-size: 0.72rem;
-  }
   .home-main {
     padding: 0.75rem 1.25rem 1.75rem;
   }
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (uniform across all pages; model is index.html) ---------- */
 footer {
-  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-rule);
   padding: 2.25rem 0 3rem;
 }
 footer .wrap {
@@ -447,14 +456,14 @@ footer a:hover { color: var(--color-accent); }
 /* ========== Article pages (writing/*.html) ========== */
 .article-page {
   padding: 3rem 2rem;
-  max-width: 900px;
+  max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .article-header {
   text-align: left;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .article-title {
@@ -478,13 +487,6 @@ footer a:hover { color: var(--color-accent); }
   color: var(--color-body);
   font-style: italic;
   margin-bottom: 0;
-}
-
-.header-separator {
-  height: 1px;
-  background-color: var(--color-rule);
-  margin: 0.75rem 0 2rem 0;
-  width: 100%;
 }
 
 .article-body {
