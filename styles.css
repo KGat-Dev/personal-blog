@@ -346,8 +346,8 @@ a.link-h6:hover {
 }
 
 .writing-table td {
-  padding: 0.5rem 0;
-  vertical-align: baseline;
+  padding: 0.75rem 0;
+  vertical-align: top;
 }
 
 .writing-table td.writing-year {
@@ -357,7 +357,6 @@ a.link-h6:hover {
   font-size: var(--font-size-base);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  vertical-align: top;
 }
 
 .writing-title a {
@@ -373,6 +372,15 @@ a.link-h6:hover {
   color: var(--color-accent);
   text-decoration: underline;
   text-decoration-color: var(--color-accent);
+}
+
+.writing-lede {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-muted);
 }
 
 /* Projects list */
@@ -515,6 +523,15 @@ footer a:hover { color: var(--color-accent); }
   margin-bottom: 0;
 }
 
+.article-body h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
 .article-body h3 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -527,6 +544,53 @@ footer a:hover { color: var(--color-accent); }
   text-transform: none;
   margin-top: 0.5rem;
   margin-bottom: 0.35rem;
+}
+
+/* Options/comparison table inside article prose — scrolls horizontally on narrow screens instead of breaking layout */
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.options-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.options-table th,
+.options-table td {
+  padding: 0.65rem 1rem 0.65rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.options-table thead th {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.options-table tbody th {
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.options-table tbody td {
+  color: var(--color-body);
+}
+
+.options-table tbody tr:last-child th,
+.options-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .article-body ul {
